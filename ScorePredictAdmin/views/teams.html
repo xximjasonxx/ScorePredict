@@ -1,0 +1,47 @@
+<h2>Teams</h2>
+
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+            <th class="col-sm-2">Abbreviation</th>
+            <th class="col-sm-8">Name</th>
+            <th class="col-sm-2"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="team in teams | orderBy:'name'">
+            <td>{{team.abbr}}</td>
+            <td>{{team.name}}</td>
+            <td>
+                <button type="button" class="btn btn-primary btn-sm" ng-click="editTeam(team);">
+                    <span class="glyphicon glyphicon-edit"> Edit</span>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script type="text/ng-template" id="teamView.html">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="cancel();">&times;</button>
+        <h4 class="modal-title">Edit Team</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="abbrText">Abbreviation</label>
+            <input type="text" class="form-control" id="abbrtext" ng-model="team.abbr" />
+        </div>
+        <div class="form-group">
+            <label for="nameText">Name</label>
+            <input type="text" class="form-control" id="nameText" ng-model="team.name" />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="cancel();">
+            <span class="glyphicon glyphicon-remove"> Close</span>
+        </button>
+        <button type="button" class="btn btn-default btn-primary" ng-click="saveTeam();">
+            <span class="glyphicon glyphicon-floppy-save"> Save</span>
+        </button>
+    </div>
+</script>

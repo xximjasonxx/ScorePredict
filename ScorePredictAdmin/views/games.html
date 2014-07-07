@@ -1,0 +1,158 @@
+<!-- Week Selection -->
+<form class="form-inline" role="form">
+    <div class="form-group" style="margin-right: 10px;">
+        <label for="weekSelect" style="margin-right: 7px;">Pick a week</label>
+        <select class="form-control" size="1" id="weekSelect" ng-model="week" ng-options="w.weekNumber group by w.year for w in weeks"
+                ng-change="changeWeek();">
+        </select>
+    </div>
+</form>
+
+<h2>Games</h2>
+
+<!-- Game Listing -->
+<div ng-switch="games.length">
+    <div class="alert alert-info" ng-switch-when="0">
+        There are no games for this week - <a href="#" ng-click="addGame();" hold-click>Add a Game</a>
+    </div>
+
+    <div ng-switch-default>
+        <div class="button-bar">
+            <button type="button" class="btn btn-primary btn-default pull-right" ng-click="addGame();">
+                <span class="glyphicon glyphicon-plus"> New Game</span>
+            </button>
+            <div class="clearfix" />
+        </div>
+
+        <table class="table table-striped table-bordered" style="margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time (EST)</th>
+                    <th>Away Team</th>
+                    <th>Score</th>
+                    <th>Home Team</th>
+                    <th>Score</th>
+                    <th>State</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="game in games">
+                <tr>
+                    <td style="vertical-align: middle;">{{game.gameDay}}</td>
+                    <td style="vertical-align: middle;">{{game.gameTime}}pm</td>
+                    <td style="vertical-align: middle;"><img ng-src="logos/{{game.awayTeam.toLowerCase()}}.png" /> {{game.awayTeam}}</td>
+                    <td style="vertical-align: middle;"><b>{{game.awayTeamScore}}</b></td>
+                    <td style="vertical-align: middle;"><img ng-src="logos/{{game.homeTeam.toLowerCase()}}.png" /> {{game.homeTeam}}</td>
+                    <td style="vertical-align: middle;"><b>{{game.homeTeamScore}}</b></td>
+                    <td style="vertical-align: middle;">{{game.gameState}}</td>
+                    <td style="vertical-align: middle; text-align: right;">
+                        <button type="button" class="btn btn-primary" ng-click="editGame(game);">
+                            <span class="glyphicon glyphicon-pencil"> Edit</span>
+                        </button>
+
+                        <button type="button" class="btn btn-danger" ng-click="deleteGame(game.id);">
+                            <span class="glyphicon glyphicon-trash"> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/ng-template" id="gameModal.html">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="close();">&times;</button>
+        <h4>Edit Game</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="daySelect">Game Day</label>
+                <div class="form-group">
+                    <div class="col-sm-8" style="padding-left: 0;">
+                        <select class="form-control input-lg" ng-model="game.gameDay" ng-options="d for d in days"></select>
+                    </div>
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="gameStateSelect">Game State</label>
+                <div class="form-group">
+                    <div class="col-sm-8" style="padding-left: 0;">
+                        <select id="gameStateSelect" class="form-control input-lg" ng-model="game.gameState" ng-options="s.code as s.display for s in states"></select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="awayTeamSelect">Away Team</label>
+                <div class="form-group">
+                    <img ng-src="logos/{{game.awayTeam}}.png" />
+                    <select class="form-control input-lg" ng-model="game.awayTeam" ng-options="t for t in teams | orderBy:'toString()'"
+                                id="awayTeamSelect" style="width: 165px; display: inline-block; margin-left: 10px;"></select>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="awayTeamScore">Score</label>
+                <div class="form-group">
+                    <div class="col-sm-4" style="padding-left: 0;">
+                        <input type="text" class="form-control input-lg" field-number ng-model="game.awayTeamScore" id="awayTeamScore" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <label for="homeTeamSelect">Home Team</label>
+                <div class="form-group">
+                    <img ng-src="logos/{{game.homeTeam}}.png" />
+                    <select class="form-control input-lg" ng-model="game.homeTeam" ng-options="t for t in teams | orderBy:'toString()'"
+                            id="homeTeamSelect" style="width: 165px; display: inline-block; margin-left: 10px;"></select>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <label for="homeTeamScore">Score</label>
+                <div class="form-group">
+                    <div class="col-sm-4" style="padding-left: 0;">
+                        <input type="text" class="form-control input-lg" field-number id="homeTeamScore" ng-model="game.homeTeamScore" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+
+        <label for="timeSelect">Game Time</label>
+        <div class="form-group">
+            <div class="col-sm-8" style="padding-left: 0;">
+                <span ng-model="game.time" style="display:inline-block;">
+                    <timepicker class="input-lg" hour-step="1" minute-step="5" show-meridian="true"></timepicker>
+                </span>
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close();">
+            <span class="glyphicon glyphicon-remove"> Close</span>
+        </button>
+        <button type="button" class="btn btn-default btn-primary" ng-click="save();">
+            <span class="glyphicon glyphicon-floppy-save"> Save</span>
+        </button>
+    </div>
+</script>

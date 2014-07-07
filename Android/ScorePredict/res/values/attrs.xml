@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="IconTextView">
+        <attr name="iconType" format="enum">
+            <enum name="Up" value="0" />
+            <enum name="Down" value="1" />
+            <enum name="Star" value="2" />
+            <enum name="Back" value="3" />
+            <enum name="Left" value="4" />
+        </attr>
+    </declare-styleable>
+
+</resources>

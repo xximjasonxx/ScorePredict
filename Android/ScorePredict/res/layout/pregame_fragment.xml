@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <com.farrellsoft.ScorePredict.Views.RegisteredTextView android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                android:text="Minnesota Vikings" android:id="@+id/awayTeamName"
+                android:textSize="18sp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="vs" android:textColor="@android:color/black"
+                android:layout_marginLeft="10dp" android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <com.farrellsoft.ScorePredict.Views.RegisteredTextView android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                android:text="Philadelphia Eagles" android:id="@+id/homeTeamName"
+                android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="What do you think the score will be?" android:layout_marginTop="20dp"
+            android:textSize="15sp" />
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp" android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="MIN" android:textSize="25sp" android:id="@+id/awayTeamAbbr" />
+
+        <EditText android:layout_width="65dp" android:layout_height="wrap_content" android:maxLength="2"
+                android:hint="0" android:gravity="center" android:layout_marginLeft="10dp"
+                android:textSize="25sp" android:id="@+id/awayTeamPrediction" android:inputType="number" />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp" android:orientation="horizontal">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="DAL" android:textSize="25sp" android:id="@+id/homeTeamAbbr" />
+
+        <EditText android:layout_width="65dp" android:layout_height="wrap_content" android:maxLength="2"
+                android:hint="0" android:gravity="center" android:textSize="25sp"
+                android:layout_marginLeft="10dp" android:id="@+id/homeTeamPrediction" android:inputType="number" />
+
+    </LinearLayout>
+
+    <Button android:layout_width="200dp" android:layout_height="50dp"
+          android:text="Make Prediction" android:layout_gravity="center_horizontal"
+          android:layout_marginTop="10dp" android:id="@+id/makePrediction" />
+
+</LinearLayout>

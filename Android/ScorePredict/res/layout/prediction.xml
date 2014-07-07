@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:sp="http://schemas.android.com/apk/res/com.farrellsoft.ScorePredict"
+        android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="5dp"
+            android:id="@+id/predictionHeader">
+
+        <com.farrellsoft.ScorePredict.Views.IconTextView android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                sp:iconType="Back" android:textSize="25sp"
+                android:layout_marginRight="10dp" android:gravity="center_vertical"
+                android:textColor="@android:color/holo_blue_dark" />
+
+        <ImageView android:layout_width="wrap_content" android:layout_height="35dp"
+                android:src="@drawable/ari" android:adjustViewBounds="true"
+                android:id="@+id/awayTeam"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
+                android:gravity="center_vertical" android:text="vs"
+                android:textSize="30sp" android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+        <ImageView android:layout_width="wrap_content" android:layout_height="35dp"
+                android:src="@drawable/det" android:adjustViewBounds="true"
+                android:id="@+id/homeTeam" />
+
+        <TextView android:layout_width="fill_parent" android:layout_height="match_parent"
+                android:layout_weight="1" android:gravity="center_vertical|right"
+                android:paddingRight="5dp" android:textSize="17sp"
+                android:id="@+id/gameTime" />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="1dp"
+            android:layout_marginTop="1dp" android:background="@android:color/holo_blue_light" />
+
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+            android:id="@+id/fragmentFrame" android:padding="5dp">
+    </FrameLayout>
+
+</LinearLayout>

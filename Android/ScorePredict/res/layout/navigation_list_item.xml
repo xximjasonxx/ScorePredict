@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res/com.farrellsoft.ScorePredict"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:padding="5dp">
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:textColor="@android:color/black"
+              android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+              android:layout_weight="1" android:id="@+id/text_year" />
+
+    <com.farrellsoft.ScorePredict.Views.IconTextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:iconType="Left" android:textColor="@android:color/black"
+              android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+              android:gravity="center_vertical"
+              android:layout_weight="0" />
+
+</LinearLayout>

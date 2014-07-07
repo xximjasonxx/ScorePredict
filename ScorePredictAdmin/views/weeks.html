@@ -1,0 +1,129 @@
+<h2>Weeks</h2>
+
+<div ng-switch="weeks.length">
+    <div class="alert alert-info" ng-switch-when="0">
+        Currently there are no weeks - <a href="#" ng-click="addWeek();" hold-click>Add a Week</a>
+    </div>
+    <div ng-switch-default>
+
+        <div class="button-bar">
+            <button type="button" class="btn btn-primary btn-default pull-right" ng-click="addWeek();">
+                <span class="glyphicon glyphicon-plus"> New Week</span>
+            </button>
+            <div class="clearfix" />
+        </div>
+
+        <table class="table table-striped table-bordered" style="margin-top: 10px;">
+            <thead>
+                <tr>
+                    <th class="col-sm-2">Season</th>
+                    <th class="col-sm-2">Week</th>
+                    <th class="col-sm-2">Start</th>
+                    <th class="col-sm-2">End</th>
+                    <th class="col-sm-3"></th>
+                </tr>
+            </thead>
+            <tbody ng-repeat="week in weeks | orderBy:['-year', 'weekNumber']">
+                <tr>
+                    <td>{{week.year}}</td>
+                    <td>{{week.weekNumber}}</td>
+                    <td>{{week.start | date:'dd'}}</td>
+                    <td>{{week.end}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-sm" ng-click="editWeek(week);">
+                            <span class="glyphicon glyphicon-edit"> Edit</span>
+                        </button>
+
+                        <button type="button" class="btn btn-danger btn-sm" ng-click="deleteWeek(week.id);">
+                            <span class="glyphicon glyphicon-trash"> Delete</span>
+                        </button>
+
+                        <button type="button" class="btn btn-default btn-sm" ng-click="getGames(week.weekNumber, week.year);">
+                            Games <span class="glyphicon glyphicon-chevron-right glyphicon-align-right"></span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/ng-template" id="weekModal.html">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="close();">&times;</button>
+        <h4 class="modal-title">Add Week</h4>
+    </div>
+    <div class="modal-body">
+        <div class="form-group">
+            <label for="weekPick">Week No</label>
+            <select class="form-control" id="weekPick" style="width: 100px;" ng-model="week.weekNumber">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="yearNumber">Year</label>
+            <input type="text" class="form-control" maxlength="4" id="yearNumber" style="width: 100px;" field-number ng-model="week.year" />
+        </div>
+        <div class="form-group">
+            <label for="startText">Start</label>
+            <p class="input-group">
+                <input type="text" class="form-control" datepicker-popup="MM/dd/yyyy" id="startText" ng-model="week.start"
+                       style="width: 100px;" show-weeks="false" show-button-bar="false" />
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="endText">End</label>
+            <p class="input-group">
+                <input type="text" class="form-control" datepicker-popup="MM/dd/yyyy" id="endText" ng-model="week.end"
+                       style="width: 100px;" show-weeks="false" show-button-bar="false" />
+            </p>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close();">
+            <span class="glyphicon glyphicon-remove"> Close</span>
+        </button>
+        <button type="button" class="btn btn-default btn-primary" ng-click="save();">
+            <span class="glyphicon glyphicon-floppy-save"> Save</span>
+        </button>
+    </div>
+</script>
+
+<script type="text/ng-template" id="deleteConfirmModal.html">
+    <div class="modal-header">
+        <button type="button" class="close" aria-hidden="true" ng-click="close();">&times;</button>
+        <h4 class="modal-title">Confirm Delete</h4>
+    </div>
+    <div class="modal-body">
+        By deleting a week you will delete all associated data, including games and predictions.  Are you sure you wish to delete this week?
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="close();">
+            <span class="glyphicon glyphicon-remove"> No</span>
+        </button>
+
+        <button type="button" class="btn btn-danger" ng-click="confirmDelete();">
+            <span class="glyphicon glyphicon-trash"> Yes</span>
+        </button>
+    </div>
+</script>

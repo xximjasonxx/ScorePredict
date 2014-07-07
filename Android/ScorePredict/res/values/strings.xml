@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="up_arrow">\uF077</string>
+    <string name="down_arrow">\uF078</string>
+    <string name="star">\uF005</string>
+    <string name="back_arrow">\uF053</string>
+    <string name="right_arrow">\uF054</string>
+    <string name="app_name">ScorePredict</string>
+    <string name="aboutText">
+        Score Predict offers you the ability to test your football knowledge. Try to predict the score of each game by the end.
+        You are able to predict the score up till the point the game starts. Based on the score at the end you will be awarded as
+        much as 50pts. The scale is shown below. So give it a try and see what how well you can predict the score.
+    </string>
+
+    <string name="IfYouPredictText">If you predict the number of points a team scores:</string>
+    <string name="predictScore1">Exactly - 20pts</string>
+    <string name="predictScore2">Within 3pts - 15pts</string>
+    <string name="predictScore3">Within 4pts - 12pts</string>
+    <string name="predictScore4">Within 7pts - 10pts</string>
+    <string name="predictScore5">Within 10pts - 5pts</string>
+    <string name="winningTeamText">Predict the winning team - 10pts</string>
+    <string name="registeredTrademarkSymbol">\u2122</string>
+
+    <string name="copyright">
+        \u00A9 The team names and logos are registered trademarks of the teams indicated.
+    </string>
+
+    <string name="facebookInfoUsage">
+        Facebook information used for authentication purposes only
+    </string>
+
+    <string name="NoConnectionErrorMessage">
+        Could not connect to Score Predict. Please check your connection
+    </string>
+
+    <string name="CurrentWeekGamesLoadFailed">
+        Failed to load games for the current week
+    </string>
+
+    <string name="termsOfUse">
+        This application is not affiliated with the NFL\u2122 in any way. This application is provided for amusement purposes only
+        for no charge. It is not intended to conduct betting or gambling activities. All team names and logos are the property of
+        the NFL\u2122 and their respective franchises.
+    </string>
+
+    <string-array name="navItems">
+        <item>Current Week</item>
+        <item>My History</item>
+        <item>About</item>
+    </string-array>
+
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+</resources>

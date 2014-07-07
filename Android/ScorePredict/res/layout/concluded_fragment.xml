@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:text="Final" android:layout_marginTop="20dp"
+              android:textSize="20sp" android:textColor="@color/holo_blue_dark" />
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <com.farrellsoft.ScorePredict.Views.RegisteredTextView android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                               android:text="Minnesota Vikings" android:id="@+id/awayTeamName"
+                               android:textSize="18sp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="27" android:id="@+id/awayFinalScore" android:textSize="18sp"
+                android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal">
+
+        <com.farrellsoft.ScorePredict.Views.RegisteredTextView android:layout_width="wrap_content"
+                                                               android:layout_height="wrap_content"
+                               android:text="Minnesota Vikings" android:id="@+id/homeTeamName"
+                               android:textSize="18sp" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="27" android:id="@+id/homeFinalScore" android:textSize="18sp"
+                  android:layout_marginLeft="10dp" />
+
+    </LinearLayout>
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+              android:text="Prediction" android:layout_marginTop="20dp"
+              android:textSize="20sp" android:textColor="@color/holo_blue_dark" />
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal" android:id="@+id/AwayPrediction">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="MIN" android:textSize="18sp"
+                  android:id="@+id/awayTeamAbbr" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:gravity="center" android:layout_marginLeft="10dp"
+                  android:textSize="18sp"
+                  android:id="@+id/awayTeamPrediction" />
+
+    </LinearLayout>
+
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+                  android:orientation="horizontal" android:id="@+id/HomePrediction" >
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="DAL" android:textSize="18sp"
+                  android:id="@+id/homeTeamAbbr" />
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:gravity="center" android:textSize="18sp"
+                  android:layout_marginLeft="10dp"
+                  android:id="@+id/homeTeamPrediction" />
+
+    </LinearLayout>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:text="No Prediction" android:textSize="18sp"
+              android:id="@+id/noPredictionText" />
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:gravity="center_horizontal" android:textSize="25sp"
+            android:textColor="@color/holo_green_dark" android:text="Prediction Points"
+            android:layout_marginTop="15dp" />
+
+    <TextView android:layout_width="fill_parent" android:layout_height="wrap_content"
+            android:text="0pts" android:textColor="@color/holo_green_dark"
+            android:gravity="center_horizontal" android:textSize="30sp"
+            android:id="@+id/predictionPoints"/>
+
+</LinearLayout>
