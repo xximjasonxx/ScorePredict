@@ -7,6 +7,7 @@
 //
 
 #import "HistoryYearTableViewController.h"
+#import "HistoryWeekTableViewController.h"
 #import "PredictionHistoryService.h"
 #import "PredictionHistoryEntry.h"
 
@@ -18,7 +19,8 @@ PredictionHistoryService *historyService;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Select Year";
+    self.navigationItem.title = @"Select Year";
+    
     predictionHistory = [[NSArray alloc] init];
     
     historyService = [[PredictionHistoryService alloc] init];
@@ -75,8 +77,13 @@ PredictionHistoryService *historyService;
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"HistoryYearSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PredictionHistoryEntry *entry = [predictionHistory objectAtIndex:indexPath.row];
+        HistoryWeekTableViewController *destViewController = segue.destinationViewController;
+        
+        destViewController.historyEntry = entry;
+    }
 }
 
 @end

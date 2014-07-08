@@ -31,6 +31,11 @@
                        PredictionHistoryEntry *entry = [[PredictionHistoryEntry alloc] init];
                        entry.year = [key intValue];
                        
+                       for (NSString *value in [resultDictionary objectForKey:key]) {
+                           int weekNumber = [value intValue];
+                           [entry.weeks addObject:[NSNumber numberWithInt:weekNumber]];
+                       }
+                       
                        [historyArray addObject:entry];
                    }
                    

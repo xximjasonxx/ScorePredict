@@ -9,6 +9,15 @@
 #import "PredictionHistoryEntry.h"
 
 @implementation PredictionHistoryEntry
-@synthesize year;
+@synthesize year, weeks;
+
+-(id)init
+{
+    if (self = [super init]) {
+        weeks = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
 
 @end

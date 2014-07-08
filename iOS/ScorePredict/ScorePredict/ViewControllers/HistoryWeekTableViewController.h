@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PredictionHistoryEntry.h"
+
 @interface HistoryWeekTableViewController : UITableViewController
+@property (nonatomic, strong) PredictionHistoryEntry *historyEntry;
 
 @end

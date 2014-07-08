@@ -10,5 +10,6 @@
 
 @interface PredictionHistoryEntry : NSObject
 @property (nonatomic) int year;
+@property (nonatomic, strong) NSMutableArray *weeks;
 
 @end
