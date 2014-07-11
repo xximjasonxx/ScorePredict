@@ -7,6 +7,7 @@
 //
 
 #import "HistoryWeekTableViewController.h"
+#import "HistoryGamesTableViewController.h"
 
 @implementation HistoryWeekTableViewController
 @synthesize historyEntry;
@@ -44,15 +45,17 @@
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"HistoryWeekSegue"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        int weekNumber = [(NSNumber *)[historyEntry.weeks objectAtIndex:indexPath.row] intValue];
+        HistoryGamesTableViewController *destViewController = segue.destinationViewController;
+        
+        destViewController.year = historyEntry.year;
+        destViewController.weekNumber = weekNumber;
+    }
 }
-*/
 
 @end

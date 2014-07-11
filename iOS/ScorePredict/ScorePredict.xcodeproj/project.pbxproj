@@ -94,6 +94,7 @@
 		04DD0FAA1960959B00529446 /* TableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FA91960959B00529446 /* TableData.m */; };
 		04DD0FB01960C7A000529446 /* ImageDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FAF1960C7A000529446 /* ImageDataTableViewCell.m */; };
 		04DD0FB31960C80500529446 /* ImageTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FB21960C80500529446 /* ImageTableData.m */; };
+		04F5001019701AC300FD7C03 /* HistoryGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5000F19701AC300FD7C03 /* HistoryGamesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -227,6 +228,8 @@
 		04DD0FAF1960C7A000529446 /* ImageDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageDataTableViewCell.m; sourceTree = "<group>"; };
 		04DD0FB11960C80500529446 /* ImageTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageTableData.h; path = Core/ImageTableData.h; sourceTree = "<group>"; };
 		04DD0FB21960C80500529446 /* ImageTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageTableData.m; path = Core/ImageTableData.m; sourceTree = "<group>"; };
+		04F5000E19701AC300FD7C03 /* HistoryGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryGamesTableViewController.h; path = ViewControllers/HistoryGamesTableViewController.h; sourceTree = "<group>"; };
+		04F5000F19701AC300FD7C03 /* HistoryGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryGamesTableViewController.m; path = ViewControllers/HistoryGamesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -358,6 +361,8 @@
 				04164C56196A26A6004AFE19 /* HistoryYearTableViewController.m */,
 				0453246A196B729900328F09 /* HistoryWeekTableViewController.h */,
 				0453246B196B729900328F09 /* HistoryWeekTableViewController.m */,
+				04F5000E19701AC300FD7C03 /* HistoryGamesTableViewController.h */,
+				04F5000F19701AC300FD7C03 /* HistoryGamesTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -651,6 +656,7 @@
 				042CC415195F7E8D0013FFA5 /* HomeViewTableViewCell.m in Sources */,
 				0453246C196B729900328F09 /* HistoryWeekTableViewController.m in Sources */,
 				042CC396195912DA0013FFA5 /* AppDelegate.m in Sources */,
+				04F5001019701AC300FD7C03 /* HistoryGamesTableViewController.m in Sources */,
 				042CC40D195BBFD90013FFA5 /* PredictionRepository.m in Sources */,
 				042CC392195912DA0013FFA5 /* main.m in Sources */,
 				04DD0FB31960C80500529446 /* ImageTableData.m in Sources */,
