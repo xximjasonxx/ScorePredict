@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-#import "GetPredictionYearsProtocol.h"
+#import "GetPredictionDataProtocol.h"
 
-@interface HistoryYearTableViewController : UITableViewController<GetPredictionYearsProtocol>
+@interface HistoryYearTableViewController : UITableViewController<GetPredictionDataProtocol>
 
 @end

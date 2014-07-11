@@ -24,7 +24,7 @@ PredictionHistoryService *historyService;
     predictionHistory = [[NSArray alloc] init];
     
     historyService = [[PredictionHistoryService alloc] init];
-    [historyService getPredictionYears:self];
+    [historyService getPredictionData:self];
 }
 
 -(void)predictionYearsRetrieved:(NSArray *)historyArray

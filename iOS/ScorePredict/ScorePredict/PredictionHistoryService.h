@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-#import "GetPredictionYearsProtocol.h"
+#import "GetPredictionDataProtocol.h"
+#import "GetPredictionGamesHistoryProtocol.h"
 
 @interface PredictionHistoryService : NSObject
 
--(void)getPredictionYears:(id<GetPredictionYearsProtocol>) delegate;
+-(void)getPredictionData:(id<GetPredictionDataProtocol>) delegate;
+-(void)getPredictionGameHistory:(id<GetPredictionGamesHistoryProtocol>) delegate;
 
 @end

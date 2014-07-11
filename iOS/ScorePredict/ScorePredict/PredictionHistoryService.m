@@ -14,7 +14,7 @@
 
 @implementation PredictionHistoryService
 
--(void)getPredictionYears:(id<GetPredictionYearsProtocol>)delegate
+-(void)getPredictionData:(id<GetPredictionDataProtocol>)delegate
 {
     MSClient *client = [ClientFactory getClient];
     [client invokeAPI:@"prediction_history"
@@ -39,12 +39,35 @@
                        [historyArray addObject:entry];
                    }
                    
-                   [delegate predictionYearsRetrieved:historyArray];
+                   [delegate predictionDataRetrieved:historyArray];
                }
                else {
                    [delegate retrievalFailed];
                }
            }];
+}
+
+-(void)getPredictionGameHistoryForWeekNumber:(int)weekNumber andYear:(int)year andDelegate:(id<GetPredictionGamesHistoryProtocol>)delegate
+{
+    MSClient *client = [ClientFactory getClient];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setValue:[NSString stringWithFormat:@"%d", year] forKey:@"year"];
+    [parameters setValue:[NSString stringWithFormat:@"%d", weekNumber] forKey:@"weekNumber"];
+    
+    [client invokeAPI:@"prediction_games_history"
+                 body:nil
+           HTTPMethod:@"GET"
+           parameters:parameters
+              headers:nil
+           completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
+               if (error == nil) {
+                   
+               }
+               else {
+                   [delegate retrievalFailed];
+               }
+           }
+     ];
 }
 
 @end
