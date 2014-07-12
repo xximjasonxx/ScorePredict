@@ -11,6 +11,7 @@
 #import "PredictionHistoryService.h"
 #import "ClientFactory.h"
 #import "PredictionHistoryEntry.h"
+#import "GamePrediction.h"
 
 @implementation PredictionHistoryService
 
@@ -61,7 +62,28 @@
               headers:nil
            completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
                if (error == nil) {
+                   NSDictionary *resultDictionary = (NSDictionary *)result;
+                   NSArray *predictions = (NSArray *)[resultDictionary objectForKey:@"predictions"];
+                   NSMutableArray *returnArray = [[NSMutableArray alloc] init];
+                   for (NSDictionary *prediction in predictions) {
+                       GamePrediction *gamePrediction = [[GamePrediction alloc] init];
+                       gamePrediction.gameId = [[prediction objectForKey:@"gameId"] integerValue];
+                       gamePrediction.gameDay = [prediction objectForKey:@"gameDay"];
+                       gamePrediction.gameTime = [prediction objectForKey:@"gameTime"];
+                       gamePrediction.awayTeam = [prediction objectForKey:@"awayAbbr"];
+                       gamePrediction.homeTeam = [prediction objectForKey:@"homeAbbr"];
+                       gamePrediction.awayScore = [[prediction objectForKey:@"awayScore"] integerValue];
+                       gamePrediction.homeScore = [[prediction objectForKey:@"homeScore"] integerValue];
+                       gamePrediction.predictedAwayScore = [[prediction objectForKey:@"predictedAwayScore"] integerValue];
+                       gamePrediction.predictedHomeScore = [[prediction objectForKey:@"preductedHomeScore"] integerValue];
+                       gamePrediction.predictionPoints = [[prediction objectForKey:@"pointsAwarded"] integerValue];
+                       
+                       // dont need gamestate
+                       
+                       [returnArray addObject:gamePrediction];
+                   }
                    
+                   [delegate retrievedGamesHistory:returnArray];
                }
                else {
                    [delegate retrievalFailed];

@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GetPredictionGamesHistoryProtocol.h"
 
-@interface HistoryGamesTableViewController : UITableViewController
+@interface HistoryGamesTableViewController : UITableViewController<GetPredictionGamesHistoryProtocol>
 @property (nonatomic) int weekNumber;
 @property (nonatomic) int year;
 

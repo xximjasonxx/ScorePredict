@@ -7,19 +7,35 @@
 //
 
 #import "HistoryGamesTableViewController.h"
+#import "PredictionHistoryService.h"
 
 @implementation HistoryGamesTableViewController
 @synthesize weekNumber, year;
+
+PredictionHistoryService *historyService;
+NSArray *games;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 
-    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Information"
-                                                       message:[NSString stringWithFormat:@"Week %d Year %d", self.weekNumber, self.year]
-                                                      delegate:nil
-                                             cancelButtonTitle:@"Ok"
-                                             otherButtonTitles:nil];
+    historyService = [[PredictionHistoryService alloc] init];
+    [historyService getPredictionGameHistoryForWeekNumber:self.weekNumber andYear:self.year andDelegate:self];
+}
+
+-(void)retrievedGamesHistory:(NSArray *)predictionGames
+{
+    games = predictionGames;
+    [self.tableView reloadData];
+}
+
+-(void)retrievalFailed
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:@"Failed to retrieve Game data"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
     
     [alertView show];
 }
@@ -27,18 +43,21 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    if (games != nil) {
+        return games.count;
+    }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"" forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PredictionCell" forIndexPath:indexPath];
     
     // Configure the cell...
     

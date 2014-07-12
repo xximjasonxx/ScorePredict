@@ -27,7 +27,7 @@ PredictionHistoryService *historyService;
     [historyService getPredictionData:self];
 }
 
--(void)predictionYearsRetrieved:(NSArray *)historyArray
+-(void)predictionDataRetrieved:(NSArray *)historyArray
 {
     predictionHistory = historyArray;
     [self.tableView reloadData];

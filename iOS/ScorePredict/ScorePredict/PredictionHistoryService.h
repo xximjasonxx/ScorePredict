@@ -14,6 +14,6 @@
 @interface PredictionHistoryService : NSObject
 
 -(void)getPredictionData:(id<GetPredictionDataProtocol>) delegate;
--(void)getPredictionGameHistory:(id<GetPredictionGamesHistoryProtocol>) delegate;
+-(void)getPredictionGameHistoryForWeekNumber:(int)weekNumber andYear:(int)year andDelegate:(id<GetPredictionGamesHistoryProtocol>)delegate;
 
 @end
