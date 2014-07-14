@@ -73,12 +73,12 @@
             <objects>
                 <tableViewController id="UFh-zZ-RMT" customClass="CurrentWeekTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="20" sectionFooterHeight="10" id="jgQ-bH-k00">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCell" rowHeight="100" id="Nqp-Eg-bml" customClass="HomeViewTableViewCell">
-                                <rect key="frame" x="0.0" y="84" width="320" height="100"/>
+                                <rect key="frame" x="0.0" y="20" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nqp-Eg-bml" id="fHk-If-aWr">
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
@@ -163,12 +163,12 @@
             <objects>
                 <tableViewController id="fdN-za-Oaq" customClass="PredictionTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="10" sectionFooterHeight="10" id="kWS-RT-bI7">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ImageDataCell" rowHeight="55" id="Lyd-28-nA5" customClass="ImageDataTableViewCell">
-                                <rect key="frame" x="0.0" y="119" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="55" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lyd-28-nA5" id="vLx-XV-Fd4">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -200,7 +200,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DataCell" rowHeight="55" id="Oqo-h7-W9x" customClass="DataTableViewCell">
-                                <rect key="frame" x="0.0" y="174" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Oqo-h7-W9x" id="TQO-Ai-3xq">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -227,7 +227,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TextEntryCell" rowHeight="55" id="Rxy-xc-kkg" customClass="TextEntryTableViewCell">
-                                <rect key="frame" x="0.0" y="229" width="320" height="55"/>
+                                <rect key="frame" x="0.0" y="165" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rxy-xc-kkg" id="tXy-xb-Ry0">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
@@ -571,7 +571,9 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="8Pt-p6-AJD" customClass="CurrentWeekNavigationControllerViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="RPA-yS-6Dk"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2f3-Il-vvD">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="2f3-Il-vvD">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
