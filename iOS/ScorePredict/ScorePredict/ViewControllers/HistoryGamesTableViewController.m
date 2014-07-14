@@ -8,17 +8,22 @@
 
 #import "HistoryGamesTableViewController.h"
 #import "PredictionHistoryService.h"
+#import "PredictionSummaryTableViewCell.h"
+#import "GamePrediction.h"
 
 @implementation HistoryGamesTableViewController
 @synthesize weekNumber, year;
 
 PredictionHistoryService *historyService;
 NSArray *games;
+int totalPoints;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    self.title = [NSString stringWithFormat:@"Week %d", weekNumber];
+    totalPoints = 0;
     historyService = [[PredictionHistoryService alloc] init];
     [historyService getPredictionGameHistoryForWeekNumber:self.weekNumber andYear:self.year andDelegate:self];
 }
@@ -57,9 +62,19 @@ NSArray *games;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PredictionCell" forIndexPath:indexPath];
-    
-    // Configure the cell...
+    PredictionSummaryTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PredictionCell" forIndexPath:indexPath];
+    if (cell != nil) {
+        GamePrediction *gamePrediction = (GamePrediction *)[games objectAtIndex:indexPath.row];
+        
+        [cell.awayTeam setImage:[UIImage imageNamed:[gamePrediction.awayTeam.lowercaseString stringByAppendingString:@".png"]]];
+        [cell.homeTeam setImage:[UIImage imageNamed:[gamePrediction.homeTeam.lowercaseString stringByAppendingString:@".png"]]];
+        [cell.awayScore setText:[NSString stringWithFormat:@"%d", gamePrediction.awayScore]];
+        [cell.homeScore setText:[NSString stringWithFormat:@"%d", gamePrediction.homeScore]];
+        [cell.predictedAwayScore setText:[NSString stringWithFormat:@"%d", gamePrediction.predictedAwayScore]];
+        [cell.predictedHomeScore setText:[NSString stringWithFormat:@"%d", gamePrediction.predictedHomeScore]];
+        [cell.predictionPoints setText:[NSString stringWithFormat:@"%d", gamePrediction.predictionPoints]];
+        totalPoints += gamePrediction.predictionPoints;
+    }
     
     return cell;
 }

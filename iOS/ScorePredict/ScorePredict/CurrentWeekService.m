@@ -32,8 +32,8 @@
     [formatter setDateFormat:@"MM/dd/yyyy"];
     
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    //[parameters setValue:[formatter stringFromDate:currentDate] forKey:@"weekForDate"];
-    [parameters setValue:@"11/1/2013" forKey:@"weekForDate"];
+    [parameters setValue:[formatter stringFromDate:currentDate] forKey:@"weekForDate"];
+    //[parameters setValue:@"11/1/2013" forKey:@"weekForDate"];
     
     MSClient *client = [ClientFactory getClient];
     [client invokeAPI:@"weekFor"

@@ -42,7 +42,12 @@
     
     [self.games addEntriesFromDictionary:[[factory getGameRepository] getGamesForWeek:currentWeek.weekNumber
                                                                              withYear:currentWeek.year]];
-    [self.tableView reloadData];
+    if (self.games.count > 0) {
+        [self.tableView reloadData];
+    }
+    else {
+        self.title = @"No Games";
+    }
 }
 
 -(void)loadFailed

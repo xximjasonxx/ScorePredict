@@ -87,6 +87,7 @@
 		042CC457195FB1760013FFA5 /* tb.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC437195FB1760013FFA5 /* tb.png */; };
 		042CC458195FB1760013FFA5 /* ten.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC438195FB1760013FFA5 /* ten.png */; };
 		042CC459195FB1760013FFA5 /* was.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC439195FB1760013FFA5 /* was.png */; };
+		043B87CB1972A58800730C0B /* PredictionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */; };
 		044E571C1964E44C00F0BB63 /* AboutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E571B1964E44C00F0BB63 /* AboutNavigationController.m */; };
 		0453246C196B729900328F09 /* HistoryWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453246B196B729900328F09 /* HistoryWeekTableViewController.m */; };
 		04586B571960F40700BC4140 /* TextEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04586B561960F40700BC4140 /* TextEntryTableViewCell.m */; };
@@ -215,6 +216,8 @@
 		042CC437195FB1760013FFA5 /* tb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tb.png; sourceTree = "<group>"; };
 		042CC438195FB1760013FFA5 /* ten.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ten.png; sourceTree = "<group>"; };
 		042CC439195FB1760013FFA5 /* was.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = was.png; sourceTree = "<group>"; };
+		043B87C91972A58800730C0B /* PredictionSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictionSummaryTableViewCell.h; sourceTree = "<group>"; };
+		043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictionSummaryTableViewCell.m; sourceTree = "<group>"; };
 		044E571A1964E44C00F0BB63 /* AboutNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutNavigationController.h; path = ViewControllers/AboutNavigationController.h; sourceTree = "<group>"; };
 		044E571B1964E44C00F0BB63 /* AboutNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutNavigationController.m; path = ViewControllers/AboutNavigationController.m; sourceTree = "<group>"; };
 		0453246A196B729900328F09 /* HistoryWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryWeekTableViewController.h; path = ViewControllers/HistoryWeekTableViewController.h; sourceTree = "<group>"; };
@@ -469,6 +472,8 @@
 				04DD0FAF1960C7A000529446 /* ImageDataTableViewCell.m */,
 				04586B551960F40700BC4140 /* TextEntryTableViewCell.h */,
 				04586B561960F40700BC4140 /* TextEntryTableViewCell.m */,
+				043B87C91972A58800730C0B /* PredictionSummaryTableViewCell.h */,
+				043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */,
 			);
 			path = TableCells;
 			sourceTree = "<group>";
@@ -681,6 +686,7 @@
 				042CC401195BBF770013FFA5 /* Prediction.m in Sources */,
 				042CC40F195BBFD90013FFA5 /* WeekRepository.m in Sources */,
 				042256B31960C9AD00CB565C /* DataTableViewCell.m in Sources */,
+				043B87CB1972A58800730C0B /* PredictionSummaryTableViewCell.m in Sources */,
 				042CC402195BBF770013FFA5 /* Week.m in Sources */,
 				04586B571960F40700BC4140 /* TextEntryTableViewCell.m in Sources */,
 				042CC40C195BBFD90013FFA5 /* GameRepository.m in Sources */,
