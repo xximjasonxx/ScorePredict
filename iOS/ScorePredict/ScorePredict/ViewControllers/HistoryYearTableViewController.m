@@ -10,6 +10,7 @@
 #import "HistoryWeekTableViewController.h"
 #import "PredictionHistoryService.h"
 #import "PredictionHistoryEntry.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @implementation HistoryYearTableViewController
 
@@ -25,6 +26,8 @@ PredictionHistoryService *historyService;
     
     historyService = [[PredictionHistoryService alloc] init];
     [historyService getPredictionData:self];
+    
+    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 -(void)predictionDataRetrieved:(NSArray *)historyArray

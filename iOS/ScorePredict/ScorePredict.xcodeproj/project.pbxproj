@@ -26,7 +26,6 @@
 		042CC3B1195912DA0013FFA5 /* ScorePredictTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CC3B0195912DA0013FFA5 /* ScorePredictTests.m */; };
 		042CC3BD195914B70013FFA5 /* fblogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC3BC195914B70013FFA5 /* fblogin.png */; };
 		042CC3C41959176E0013FFA5 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CC3C31959176E0013FFA5 /* RootViewController.m */; };
-		042CC3C7195917E50013FFA5 /* RootTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CC3C6195917E50013FFA5 /* RootTabBarController.m */; };
 		042CC3CF195A64740013FFA5 /* about.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC3C9195A64740013FFA5 /* about.png */; };
 		042CC3D0195A64740013FFA5 /* about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC3CA195A64740013FFA5 /* about@2x.png */; };
 		042CC3D1195A64740013FFA5 /* history.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC3CB195A64740013FFA5 /* history.png */; };
@@ -88,15 +87,19 @@
 		042CC458195FB1760013FFA5 /* ten.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC438195FB1760013FFA5 /* ten.png */; };
 		042CC459195FB1760013FFA5 /* was.png in Resources */ = {isa = PBXBuildFile; fileRef = 042CC439195FB1760013FFA5 /* was.png */; };
 		043B87CB1972A58800730C0B /* PredictionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */; };
+		044CD8DC197CA80B0045F926 /* hamburger-icon-green.png in Resources */ = {isa = PBXBuildFile; fileRef = 044CD8DB197CA80B0045F926 /* hamburger-icon-green.png */; };
+		044CD8DF197CAB300045F926 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CD8DE197CAB300045F926 /* MenuTableViewController.m */; };
 		044E571C1964E44C00F0BB63 /* AboutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E571B1964E44C00F0BB63 /* AboutNavigationController.m */; };
 		0453246C196B729900328F09 /* HistoryWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453246B196B729900328F09 /* HistoryWeekTableViewController.m */; };
 		04586B571960F40700BC4140 /* TextEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04586B561960F40700BC4140 /* TextEntryTableViewCell.m */; };
+		0472CB68197C9C7E0091C0D3 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0472CB67197C9C7E0091C0D3 /* MainViewController.m */; };
 		04DD0FA7196092B500529446 /* PredictionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FA6196092B500529446 /* PredictionTableViewController.m */; };
 		04DD0FAA1960959B00529446 /* TableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FA91960959B00529446 /* TableData.m */; };
 		04DD0FB01960C7A000529446 /* ImageDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FAF1960C7A000529446 /* ImageDataTableViewCell.m */; };
 		04DD0FB31960C80500529446 /* ImageTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FB21960C80500529446 /* ImageTableData.m */; };
 		04DD87EF197143C300E279F7 /* GamePrediction.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD87EE197143C300E279F7 /* GamePrediction.m */; };
 		04F5001019701AC300FD7C03 /* HistoryGamesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F5000F19701AC300FD7C03 /* HistoryGamesTableViewController.m */; };
+		E7DC4DAD0C6B4B4D875F7344 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 81B01FED26A546AB838A558B /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,8 +142,6 @@
 		042CC3BC195914B70013FFA5 /* fblogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fblogin.png; sourceTree = "<group>"; };
 		042CC3C21959176E0013FFA5 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = ViewControllers/RootViewController.h; sourceTree = "<group>"; };
 		042CC3C31959176E0013FFA5 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = ViewControllers/RootViewController.m; sourceTree = "<group>"; };
-		042CC3C5195917E50013FFA5 /* RootTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootTabBarController.h; path = ViewControllers/RootTabBarController.h; sourceTree = "<group>"; };
-		042CC3C6195917E50013FFA5 /* RootTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootTabBarController.m; path = ViewControllers/RootTabBarController.m; sourceTree = "<group>"; };
 		042CC3C9195A64740013FFA5 /* about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = about.png; path = ../Images/about.png; sourceTree = "<group>"; };
 		042CC3CA195A64740013FFA5 /* about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "about@2x.png"; path = "../Images/about@2x.png"; sourceTree = "<group>"; };
 		042CC3CB195A64740013FFA5 /* history.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = history.png; path = ../Images/history.png; sourceTree = "<group>"; };
@@ -218,12 +219,17 @@
 		042CC439195FB1760013FFA5 /* was.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = was.png; sourceTree = "<group>"; };
 		043B87C91972A58800730C0B /* PredictionSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictionSummaryTableViewCell.h; sourceTree = "<group>"; };
 		043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictionSummaryTableViewCell.m; sourceTree = "<group>"; };
+		044CD8DB197CA80B0045F926 /* hamburger-icon-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hamburger-icon-green.png"; sourceTree = "<group>"; };
+		044CD8DD197CAB300045F926 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = ViewControllers/MenuTableViewController.h; sourceTree = "<group>"; };
+		044CD8DE197CAB300045F926 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewController.m; path = ViewControllers/MenuTableViewController.m; sourceTree = "<group>"; };
 		044E571A1964E44C00F0BB63 /* AboutNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutNavigationController.h; path = ViewControllers/AboutNavigationController.h; sourceTree = "<group>"; };
 		044E571B1964E44C00F0BB63 /* AboutNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutNavigationController.m; path = ViewControllers/AboutNavigationController.m; sourceTree = "<group>"; };
 		0453246A196B729900328F09 /* HistoryWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryWeekTableViewController.h; path = ViewControllers/HistoryWeekTableViewController.h; sourceTree = "<group>"; };
 		0453246B196B729900328F09 /* HistoryWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryWeekTableViewController.m; path = ViewControllers/HistoryWeekTableViewController.m; sourceTree = "<group>"; };
 		04586B551960F40700BC4140 /* TextEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntryTableViewCell.h; sourceTree = "<group>"; };
 		04586B561960F40700BC4140 /* TextEntryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextEntryTableViewCell.m; sourceTree = "<group>"; };
+		0472CB66197C9C7E0091C0D3 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ViewControllers/MainViewController.h; sourceTree = "<group>"; };
+		0472CB67197C9C7E0091C0D3 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ViewControllers/MainViewController.m; sourceTree = "<group>"; };
 		04DD0FA5196092B500529446 /* PredictionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PredictionTableViewController.h; path = ViewControllers/PredictionTableViewController.h; sourceTree = "<group>"; };
 		04DD0FA6196092B500529446 /* PredictionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredictionTableViewController.m; path = ViewControllers/PredictionTableViewController.m; sourceTree = "<group>"; };
 		04DD0FA81960959B00529446 /* TableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableData.h; path = Core/TableData.h; sourceTree = "<group>"; };
@@ -237,6 +243,8 @@
 		04F4BA0319708F0700C7454E /* GetPredictionGamesHistoryProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetPredictionGamesHistoryProtocol.h; sourceTree = "<group>"; };
 		04F5000E19701AC300FD7C03 /* HistoryGamesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryGamesTableViewController.h; path = ViewControllers/HistoryGamesTableViewController.h; sourceTree = "<group>"; };
 		04F5000F19701AC300FD7C03 /* HistoryGamesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryGamesTableViewController.m; path = ViewControllers/HistoryGamesTableViewController.m; sourceTree = "<group>"; };
+		431CBE68912B47DEACFFC1EA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		81B01FED26A546AB838A558B /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,6 +256,7 @@
 				042CC38A195912DA0013FFA5 /* UIKit.framework in Frameworks */,
 				042CC3DF195A68320013FFA5 /* WindowsAzureMobileServices.framework in Frameworks */,
 				042CC386195912DA0013FFA5 /* Foundation.framework in Frameworks */,
+				E7DC4DAD0C6B4B4D875F7344 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +281,7 @@
 				042CC3AA195912DA0013FFA5 /* ScorePredictTests */,
 				042CC384195912DA0013FFA5 /* Frameworks */,
 				042CC383195912DA0013FFA5 /* Products */,
+				431CBE68912B47DEACFFC1EA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,6 +301,7 @@
 				042CC387195912DA0013FFA5 /* CoreGraphics.framework */,
 				042CC389195912DA0013FFA5 /* UIKit.framework */,
 				042CC3A4195912DA0013FFA5 /* XCTest.framework */,
+				81B01FED26A546AB838A558B /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -350,8 +361,6 @@
 			children = (
 				042CC3C21959176E0013FFA5 /* RootViewController.h */,
 				042CC3C31959176E0013FFA5 /* RootViewController.m */,
-				042CC3C5195917E50013FFA5 /* RootTabBarController.h */,
-				042CC3C6195917E50013FFA5 /* RootTabBarController.m */,
 				042CC3D5195A64AF0013FFA5 /* CurrentWeekNavigationControllerViewController.h */,
 				042CC3D6195A64AF0013FFA5 /* CurrentWeekNavigationControllerViewController.m */,
 				042CC3D8195A65250013FFA5 /* HistoryNavigationController.h */,
@@ -370,6 +379,10 @@
 				0453246B196B729900328F09 /* HistoryWeekTableViewController.m */,
 				04F5000E19701AC300FD7C03 /* HistoryGamesTableViewController.h */,
 				04F5000F19701AC300FD7C03 /* HistoryGamesTableViewController.m */,
+				0472CB66197C9C7E0091C0D3 /* MainViewController.h */,
+				0472CB67197C9C7E0091C0D3 /* MainViewController.m */,
+				044CD8DD197CAB300045F926 /* MenuTableViewController.h */,
+				044CD8DE197CAB300045F926 /* MenuTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -406,6 +419,7 @@
 		042CC3C8195A64740013FFA5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				044CD8DB197CA80B0045F926 /* hamburger-icon-green.png */,
 				042CC3E9195A6E330013FFA5 /* icon_58.png */,
 				042CC3EA195A6E330013FFA5 /* icon_80.png */,
 				042CC3EB195A6E330013FFA5 /* icon_120.png */,
@@ -524,9 +538,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 042CC3B4195912DA0013FFA5 /* Build configuration list for PBXNativeTarget "ScorePredict" */;
 			buildPhases = (
+				BA751B28E0484BAAAC194D49 /* Check Pods Manifest.lock */,
 				042CC37E195912DA0013FFA5 /* Sources */,
 				042CC37F195912DA0013FFA5 /* Frameworks */,
 				042CC380195912DA0013FFA5 /* Resources */,
+				15FDA693C2C6458B97FDB859 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -637,6 +653,7 @@
 				042CC3D1195A64740013FFA5 /* history.png in Resources */,
 				042CC442195FB1760013FFA5 /* dal.png in Resources */,
 				042CC447195FB1760013FFA5 /* ind.png in Resources */,
+				044CD8DC197CA80B0045F926 /* hamburger-icon-green.png in Resources */,
 				042CC3ED195A6E330013FFA5 /* icon_58.png in Resources */,
 				042CC445195FB1760013FFA5 /* gb.png in Resources */,
 				042CC452195FB1760013FFA5 /* pit.png in Resources */,
@@ -655,6 +672,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		15FDA693C2C6458B97FDB859 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA751B28E0484BAAAC194D49 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		042CC37E195912DA0013FFA5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -670,6 +720,7 @@
 				0453246C196B729900328F09 /* HistoryWeekTableViewController.m in Sources */,
 				042CC396195912DA0013FFA5 /* AppDelegate.m in Sources */,
 				04F5001019701AC300FD7C03 /* HistoryGamesTableViewController.m in Sources */,
+				044CD8DF197CAB300045F926 /* MenuTableViewController.m in Sources */,
 				042CC40D195BBFD90013FFA5 /* PredictionRepository.m in Sources */,
 				042CC392195912DA0013FFA5 /* main.m in Sources */,
 				04DD0FB31960C80500529446 /* ImageTableData.m in Sources */,
@@ -679,7 +730,7 @@
 				042CC3E2195A691D0013FFA5 /* ClientFactory.m in Sources */,
 				042CC3DA195A65250013FFA5 /* HistoryNavigationController.m in Sources */,
 				042CC3F7195BBE300013FFA5 /* CurrentWeekService.m in Sources */,
-				042CC3C7195917E50013FFA5 /* RootTabBarController.m in Sources */,
+				0472CB68197C9C7E0091C0D3 /* MainViewController.m in Sources */,
 				042CC3C41959176E0013FFA5 /* RootViewController.m in Sources */,
 				044E571C1964E44C00F0BB63 /* AboutNavigationController.m in Sources */,
 				042CC3D7195A64AF0013FFA5 /* CurrentWeekNavigationControllerViewController.m in Sources */,
@@ -813,6 +864,7 @@
 		};
 		042CC3B5195912DA0013FFA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 431CBE68912B47DEACFFC1EA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -830,6 +882,7 @@
 		};
 		042CC3B6195912DA0013FFA5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 431CBE68912B47DEACFFC1EA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;

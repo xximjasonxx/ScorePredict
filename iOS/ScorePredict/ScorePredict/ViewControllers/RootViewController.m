@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RootViewController.h"
-#import "RootTabBarController.h"
+#import "MainViewController.h"
 #import "ClientFactory.h"
 
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
@@ -64,7 +64,7 @@
 - (void)goToMainView {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    RootTabBarController *mainView =  (RootTabBarController*)[storyboard instantiateViewControllerWithIdentifier:@"MainView"];
+    MainViewController *mainView =  (MainViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainView"];
     [mainView setModalPresentationStyle:UIModalPresentationFullScreen];
     [self presentViewController:mainView animated:NO completion:nil];
 }

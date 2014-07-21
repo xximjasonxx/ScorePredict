@@ -7,6 +7,7 @@
 //
 
 #import "AboutViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 @implementation AboutViewController
 @synthesize scrollView;
@@ -20,6 +21,8 @@
 {
     [super viewDidLoad];
     self.title = @"About";
+    
+    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 @end

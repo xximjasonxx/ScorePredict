@@ -8,6 +8,7 @@
 
 #import "CurrentWeekTableViewController.h"
 #import "PredictionTableViewController.h"
+#import "UIViewController+ECSlidingViewController.h"
 
 #import "HomeViewTableViewCell.h"
 #import "RepositoryFactory.h"
@@ -22,6 +23,8 @@
     [super viewDidLoad];
     self.games = [[NSMutableDictionary alloc] init];
     self.title = @"";
+    
+    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
 }
 
 -(void)viewDidAppear:(BOOL)animated
