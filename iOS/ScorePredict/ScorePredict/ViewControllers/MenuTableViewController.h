@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuTableViewController : UITableViewController
-- (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue;
+@property (nonatomic, strong) NSArray *menuItems;
 
 @end

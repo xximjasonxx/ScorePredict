@@ -10,9 +10,10 @@
 #import "HistoryWeekTableViewController.h"
 #import "PredictionHistoryService.h"
 #import "PredictionHistoryEntry.h"
-#import "UIViewController+ECSlidingViewController.h"
+#import "SWRevealViewController.h"
 
 @implementation HistoryYearTableViewController
+@synthesize menuItem;
 
 NSArray *predictionHistory;
 PredictionHistoryService *historyService;
@@ -27,7 +28,11 @@ PredictionHistoryService *historyService;
     historyService = [[PredictionHistoryService alloc] init];
     [historyService getPredictionData:self];
     
-    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    menuItem.target = self.revealViewController;
+    menuItem.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 -(void)predictionDataRetrieved:(NSArray *)historyArray

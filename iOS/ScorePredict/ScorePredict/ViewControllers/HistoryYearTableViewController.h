@@ -11,5 +11,6 @@
 #import "GetPredictionDataProtocol.h"
 
 @interface HistoryYearTableViewController : UITableViewController<GetPredictionDataProtocol>
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuItem;
 
 @end

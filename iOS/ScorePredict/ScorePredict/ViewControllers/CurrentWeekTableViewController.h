@@ -12,5 +12,6 @@
 
 @interface CurrentWeekTableViewController : UITableViewController <CurrentWeekProtocol>
 @property (nonatomic, strong) NSMutableDictionary *games;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *menuItem;
 
 @end

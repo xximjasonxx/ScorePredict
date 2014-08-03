@@ -7,10 +7,10 @@
 //
 
 #import "AboutViewController.h"
-#import "UIViewController+ECSlidingViewController.h"
+#import "SWRevealViewController.h"
 
 @implementation AboutViewController
-@synthesize scrollView;
+@synthesize scrollView, menuButton;
 
 -(void)viewWillAppear:(BOOL)animated
 {
@@ -22,7 +22,11 @@
     [super viewDidLoad];
     self.title = @"About";
     
-    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    menuButton.target = self.revealViewController;
+    menuButton.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 @end

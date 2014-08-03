@@ -9,19 +9,44 @@
 #import "MenuTableViewController.h"
 
 @implementation MenuTableViewController
-- (IBAction)unwindToMenuViewController:(UIStoryboardSegue *)segue { }
+@synthesize menuItems;
+
+UIColor *backgroundColor;
 
 -(void)viewDidLoad
 {
-    // get the height of the screen
-    CGFloat screenHeight = [UIScreen mainScreen].bounds.size.width;
+    backgroundColor = [UIColor colorWithRed:0x03/255.0 green:0x4e/255.0 blue:0x00 alpha:1.0f];
     
-    // set the background color of the view
-    self.view.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:1];
+    self.view.backgroundColor = backgroundColor;
+    self.tableView.backgroundColor = backgroundColor;
+    self.tableView.separatorColor = backgroundColor;
     
-    // set the frame height
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y,
-                                 200, screenHeight);
+    self.menuItems = @[@"current_week", @"history", @"about", @"logout"];
+    
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return self.menuItems.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    cell.backgroundColor = backgroundColor;
+    cell.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
+    //cell.layer.borderWidth = 1.0f;
+    
+    return cell;
 }
 
 @end

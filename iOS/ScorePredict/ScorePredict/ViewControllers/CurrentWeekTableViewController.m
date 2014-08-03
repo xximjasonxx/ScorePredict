@@ -8,7 +8,7 @@
 
 #import "CurrentWeekTableViewController.h"
 #import "PredictionTableViewController.h"
-#import "UIViewController+ECSlidingViewController.h"
+#import "SWRevealViewController.h"
 
 #import "HomeViewTableViewCell.h"
 #import "RepositoryFactory.h"
@@ -16,7 +16,7 @@
 #import "Game.h"
 
 @implementation CurrentWeekTableViewController
-@synthesize games;
+@synthesize games, menuItem;
 
 -(void)viewDidLoad
 {
@@ -24,7 +24,12 @@
     self.games = [[NSMutableDictionary alloc] init];
     self.title = @"";
     
-    [self.slidingViewController.topViewController.view addGestureRecognizer:self.slidingViewController.panGesture];
+    // Set the side bar button action. When it's tapped, it'll show up the sidebar.
+    menuItem.target = self.revealViewController;
+    menuItem.action = @selector(revealToggle:);
+    
+    // Set the gesture
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
 }
 
 -(void)viewDidAppear:(BOOL)animated
