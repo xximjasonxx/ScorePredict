@@ -7,6 +7,7 @@
 //
 
 #import "MenuTableViewController.h"
+#import "SWRevealViewController.h"
 
 @implementation MenuTableViewController
 @synthesize menuItems;
@@ -52,6 +53,19 @@ UIColor *backgroundColor;
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return indexPath.row != 0;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
+        SWRevealViewControllerSegue *swSegue = (SWRevealViewControllerSegue*) segue;
+        
+        swSegue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc) {
+            UINavigationController* navController = (UINavigationController*)self.revealViewController.frontViewController;
+            [navController setViewControllers: @[dvc] animated: NO ];
+            [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
+        };        
+    }
 }
 
 @end
