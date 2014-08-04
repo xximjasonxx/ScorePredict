@@ -21,9 +21,11 @@ UIColor *backgroundColor;
     self.tableView.backgroundColor = backgroundColor;
     self.tableView.separatorColor = backgroundColor;
     
-    self.menuItems = @[@"current_week", @"history", @"about", @"logout"];
+    self.menuItems = @[@"title", @"current_week", @"history", @"about", @"logout"];
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
+    [self.tableView setSeparatorColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0]];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -43,10 +45,13 @@ UIColor *backgroundColor;
     NSString *CellIdentifier = [self.menuItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.backgroundColor = backgroundColor;
-    cell.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
-    //cell.layer.borderWidth = 1.0f;
     
     return cell;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.row != 0;
 }
 
 @end
