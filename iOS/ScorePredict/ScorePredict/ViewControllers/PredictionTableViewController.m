@@ -24,7 +24,6 @@ NSMutableDictionary *dataArray;
     [super viewDidLoad];
     
     dataArray = [[NSMutableDictionary alloc] init];
-    //self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 320.0f, 10.0f)];
     
     if ([selectedGame isConcluded]) {
         [self buildFinalList];

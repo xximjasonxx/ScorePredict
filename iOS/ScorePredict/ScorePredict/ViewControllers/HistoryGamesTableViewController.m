@@ -25,17 +25,20 @@ int totalPoints;
     self.title = [NSString stringWithFormat:@"Week %d", weekNumber];
     totalPoints = 0;
     historyService = [[PredictionHistoryService alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
     [historyService getPredictionGameHistoryForWeekNumber:self.weekNumber andYear:self.year andDelegate:self];
 }
 
 -(void)retrievedGamesHistory:(NSArray *)predictionGames
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
     games = predictionGames;
     [self.tableView reloadData];
 }
 
 -(void)retrievalFailed
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:@"Failed to retrieve Game data"
                                                        delegate:nil

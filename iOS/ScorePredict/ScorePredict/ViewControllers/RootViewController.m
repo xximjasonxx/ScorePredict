@@ -32,7 +32,11 @@
 -(IBAction)executeLogin:(id)sender
 {
     MSClient *client = [ClientFactory getClient];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+    
     [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+        
         if (error == nil) {
             // store the credentials
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
