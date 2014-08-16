@@ -39,6 +39,8 @@
     NSString *token = [defaults objectForKey:@"Token"];
     
     CurrentWeekService *service = [[CurrentWeekService alloc] initWithDelegate:self];
+    
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
     [service loadCurrentWeekFor:userId withToken:token];
 }
 
@@ -46,6 +48,7 @@
 {
     RepositoryFactory *factory = [RepositoryFactory getInstance];
     Week *currentWeek = [[factory getWeekRepository] getCurrentWeek];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
     self.title = [NSString stringWithFormat:@"Week %d %d", currentWeek.weekNumber, currentWeek.year];
     
     [self.games addEntriesFromDictionary:[[factory getGameRepository] getGamesForWeek:currentWeek.weekNumber

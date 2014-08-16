@@ -26,6 +26,7 @@ PredictionHistoryService *historyService;
     predictionHistory = [[NSArray alloc] init];
     
     historyService = [[PredictionHistoryService alloc] init];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
     [historyService getPredictionData:self];
     
     menuItem.target = self.revealViewController;
@@ -37,12 +38,14 @@ PredictionHistoryService *historyService;
 
 -(void)predictionDataRetrieved:(NSArray *)historyArray
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
     predictionHistory = historyArray;
     [self.tableView reloadData];
 }
 
 -(void)retrievalFailed
 {
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                          message:@"Failed to Get Prediction Years"
                                                         delegate:nil
