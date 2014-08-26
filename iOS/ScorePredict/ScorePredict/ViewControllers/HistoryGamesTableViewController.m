@@ -69,8 +69,8 @@ int totalPoints;
     if (cell != nil) {
         GamePrediction *gamePrediction = (GamePrediction *)[games objectAtIndex:indexPath.row];
         
-        [cell.awayTeam setImage:[UIImage imageNamed:[gamePrediction.awayTeam.lowercaseString stringByAppendingString:@".png"]]];
-        [cell.homeTeam setImage:[UIImage imageNamed:[gamePrediction.homeTeam.lowercaseString stringByAppendingString:@".png"]]];
+        cell.awayTeam.text = [gamePrediction.awayTeam uppercaseString];
+        cell.homeTeam.text = [gamePrediction.homeTeam uppercaseString];
         [cell.awayScore setText:[NSString stringWithFormat:@"%d", gamePrediction.awayScore]];
         [cell.homeScore setText:[NSString stringWithFormat:@"%d", gamePrediction.homeScore]];
         [cell.predictedAwayScore setText:[NSString stringWithFormat:@"%d", gamePrediction.predictedAwayScore]];
