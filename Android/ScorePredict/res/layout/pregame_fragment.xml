@@ -8,7 +8,8 @@
     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <com.farrellsoft.ScorePredict.Views.RegisteredTextView android:layout_width="wrap_content"
+        <com.farrellsoft.TheScorePredict.Views.RegisteredTextView
+            android:layout_width="wrap_content"
                                                                android:layout_height="wrap_content"
                 android:text="Minnesota Vikings" android:id="@+id/awayTeamName"
                 android:textSize="18sp" />
@@ -22,7 +23,8 @@
     <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <com.farrellsoft.ScorePredict.Views.RegisteredTextView android:layout_width="wrap_content"
+        <com.farrellsoft.TheScorePredict.Views.RegisteredTextView
+            android:layout_width="wrap_content"
                                                                android:layout_height="wrap_content"
                 android:text="Philadelphia Eagles" android:id="@+id/homeTeamName"
                 android:textSize="18sp" />
