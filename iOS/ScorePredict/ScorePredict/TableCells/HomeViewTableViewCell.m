@@ -9,8 +9,8 @@
 #import "HomeViewTableViewCell.h"
 
 @implementation HomeViewTableViewCell
-@synthesize gameTime, gameState, awayScore, awayTeamImage, predictedAwayScore;
-@synthesize homeScore, homeTeamImage, predictedHomeScore;
+@synthesize gameTime, gameState, awayScore, awayTeam, predictedAwayScore;
+@synthesize homeScore, homeTeam, predictedHomeScore;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

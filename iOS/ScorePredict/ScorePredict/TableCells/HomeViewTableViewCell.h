@@ -10,8 +10,8 @@
 
 @interface HomeViewTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *gameTime;
-@property (weak, nonatomic) IBOutlet UIImageView *homeTeamImage;
-@property (weak, nonatomic) IBOutlet UIImageView *awayTeamImage;
+@property (weak, nonatomic) IBOutlet UILabel *homeTeam;
+@property (weak, nonatomic) IBOutlet UILabel *awayTeam;
 @property (weak, nonatomic) IBOutlet UILabel *homeScore;
 @property (weak, nonatomic) IBOutlet UILabel *awayScore;
 @property (weak, nonatomic) IBOutlet UILabel *predictedHomeScore;

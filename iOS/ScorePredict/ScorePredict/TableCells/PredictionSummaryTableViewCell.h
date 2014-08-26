@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PredictionSummaryTableViewCell : UITableViewCell
-@property (nonatomic, retain) IBOutlet UIImageView *awayTeam;
-@property (nonatomic, retain) IBOutlet UIImageView *homeTeam;
+@property (nonatomic, retain) IBOutlet UILabel *awayTeam;
+@property (nonatomic, retain) IBOutlet UILabel *homeTeam;
 @property (nonatomic, retain) IBOutlet UILabel *awayScore;
 @property (nonatomic, retain) IBOutlet UILabel *homeScore;
 @property (nonatomic, retain) IBOutlet UILabel *predictedAwayScore;

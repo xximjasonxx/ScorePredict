@@ -98,8 +98,8 @@
         cell.homeScore.text = [NSString stringWithFormat:@"%d", game.homeTeamScore];
         cell.gameTime.text = [game.gameTime stringByAppendingString:@"pm"];
         cell.gameState.text = [game getGameState];
-        cell.awayTeamImage.image = [UIImage imageNamed:[game.awayTeamAbbr.lowercaseString stringByAppendingString:@".png"]];
-        cell.homeTeamImage.image = [UIImage imageNamed:[game.homeTeamAbbr.lowercaseString stringByAppendingString:@".png"]];
+        cell.awayTeam.text = [game.awayTeamAbbr uppercaseString];
+        cell.homeTeam.text = [game.homeTeamAbbr uppercaseString];
         
         if ([game.gameState.lowercaseString isEqualToString:@"ip"]) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
