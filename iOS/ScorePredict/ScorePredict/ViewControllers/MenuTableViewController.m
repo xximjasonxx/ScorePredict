@@ -66,6 +66,15 @@ UIColor *backgroundColor;
             [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
         };        
     }
+    else if ([segue.identifier isEqualToString:@"logout"]) {
+        // clear the stored information
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults removeObjectForKey:@"Token"];
+        [defaults removeObjectForKey:@"UserUd"];
+        [defaults synchronize];
+        
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    }
 }
 
 @end

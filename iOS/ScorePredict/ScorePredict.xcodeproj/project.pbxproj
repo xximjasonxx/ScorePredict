@@ -282,11 +282,11 @@
 		042CC379195912DA0013FFA5 = {
 			isa = PBXGroup;
 			children = (
-				042CC3DE195A68320013FFA5 /* WindowsAzureMobileServices.framework */,
-				042CC38B195912DA0013FFA5 /* ScorePredict */,
-				042CC3AA195912DA0013FFA5 /* ScorePredictTests */,
 				042CC384195912DA0013FFA5 /* Frameworks */,
 				042CC383195912DA0013FFA5 /* Products */,
+				042CC38B195912DA0013FFA5 /* ScorePredict */,
+				042CC3AA195912DA0013FFA5 /* ScorePredictTests */,
+				042CC3DE195A68320013FFA5 /* WindowsAzureMobileServices.framework */,
 			);
 			sourceTree = "<group>";
 		};
@@ -856,6 +856,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jason Farrell (3EG6KX5J4Z)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScorePredict",
@@ -865,6 +866,7 @@
 				INFOPLIST_FILE = "ScorePredict/ScorePredict-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1B28D9D5-F0FA-4292-9E60-EF834D230651";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -874,6 +876,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jason Farrell (3EG6KX5J4Z)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScorePredict",
@@ -883,6 +886,7 @@
 				INFOPLIST_FILE = "ScorePredict/ScorePredict-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1EC1AE0C-0588-470F-B1B9-182B33D67003";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
