@@ -79,8 +79,8 @@ public class ScoreListAdapter extends ArrayAdapter<IEntry> {
             theView = LayoutInflater.from(getContext()).inflate(R.layout.game_list_item, null);
             viewHolder = new ViewHolder();
 
-            viewHolder.awayTeam = (ImageView) theView.findViewById(R.id.awayTeam);
-            viewHolder.homeTeam = (ImageView) theView.findViewById(R.id.homeTeam);
+            viewHolder.awayTeam = (TextView) theView.findViewById(R.id.tvAwayTeam);
+            viewHolder.homeTeam = (TextView) theView.findViewById(R.id.tvHomeTeam);
             viewHolder.awayScore = (TextView) theView.findViewById(R.id.awayScore);
             viewHolder.homeScore = (TextView) theView.findViewById(R.id.homeScore);
             viewHolder.gameTime = (TextView) theView.findViewById(R.id.tvGameTime);
@@ -94,8 +94,8 @@ public class ScoreListAdapter extends ArrayAdapter<IEntry> {
             viewHolder = (ViewHolder) theView.getTag();
         }
 
-        viewHolder.awayTeam.setImageDrawable(Convert.toDrawable(getContext(), gameEntry.getAwayAbbr()));
-        viewHolder.homeTeam.setImageDrawable(Convert.toDrawable(getContext(), gameEntry.getHomeAbbr()));
+        viewHolder.awayTeam.setText(gameEntry.getAwayAbbr().toUpperCase());
+        viewHolder.homeTeam.setText(gameEntry.getHomeAbbr().toUpperCase());
         viewHolder.awayScore.setText(String.format("%d", gameEntry.getAwayScore()));
         viewHolder.homeScore.setText(String.format("%d", gameEntry.getHomeScore()));
         viewHolder.gameTime.setText(new GameTimeDisplayWrapper(gameEntry.getTime()).toString());
@@ -206,8 +206,8 @@ public class ScoreListAdapter extends ArrayAdapter<IEntry> {
     }
 
     private static class ViewHolder {
-        ImageView awayTeam;
-        ImageView homeTeam;
+        TextView awayTeam;
+        TextView homeTeam;
         TextView awayScore;
         TextView homeScore;
         TextView gameTime;
