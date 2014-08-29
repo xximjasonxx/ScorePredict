@@ -15,6 +15,11 @@
 
 @implementation RootViewController
 
+-(void)viewDidLoad
+{
+    self.navigationController.navigationBar.hidden = YES;
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

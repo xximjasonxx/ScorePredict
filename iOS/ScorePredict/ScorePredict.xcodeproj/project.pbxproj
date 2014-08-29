@@ -65,6 +65,8 @@
 		046000BC198EC89B0091DE97 /* InitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046000BB198EC89B0091DE97 /* InitViewController.m */; };
 		046000BF198EF7130091DE97 /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 046000BD198EF7130091DE97 /* logout.png */; };
 		046000C0198EF7130091DE97 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 046000BE198EF7130091DE97 /* logout@2x.png */; };
+		049208BE19B13BD400B3C46B /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049208BD19B13BD400B3C46B /* LoginViewController.m */; };
+		049208C119B13C3100B3C46B /* CreateUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 049208C019B13C3100B3C46B /* CreateUserViewController.m */; };
 		04DD0FA7196092B500529446 /* PredictionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FA6196092B500529446 /* PredictionTableViewController.m */; };
 		04DD0FAA1960959B00529446 /* TableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FA91960959B00529446 /* TableData.m */; };
 		04DD0FB01960C7A000529446 /* ImageDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD0FAF1960C7A000529446 /* ImageDataTableViewCell.m */; };
@@ -174,6 +176,10 @@
 		046000BB198EC89B0091DE97 /* InitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InitViewController.m; path = ViewControllers/InitViewController.m; sourceTree = "<group>"; };
 		046000BD198EF7130091DE97 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
 		046000BE198EF7130091DE97 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
+		049208BC19B13BD400B3C46B /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewControllers/LoginViewController.h; sourceTree = "<group>"; };
+		049208BD19B13BD400B3C46B /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewControllers/LoginViewController.m; sourceTree = "<group>"; };
+		049208BF19B13C3100B3C46B /* CreateUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreateUserViewController.h; path = ViewControllers/CreateUserViewController.h; sourceTree = "<group>"; };
+		049208C019B13C3100B3C46B /* CreateUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreateUserViewController.m; path = ViewControllers/CreateUserViewController.m; sourceTree = "<group>"; };
 		04DD0FA5196092B500529446 /* PredictionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PredictionTableViewController.h; path = ViewControllers/PredictionTableViewController.h; sourceTree = "<group>"; };
 		04DD0FA6196092B500529446 /* PredictionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PredictionTableViewController.m; path = ViewControllers/PredictionTableViewController.m; sourceTree = "<group>"; };
 		04DD0FA81960959B00529446 /* TableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableData.h; path = Core/TableData.h; sourceTree = "<group>"; };
@@ -324,6 +330,10 @@
 				044CD8DE197CAB300045F926 /* MenuTableViewController.m */,
 				046000BA198EC89B0091DE97 /* InitViewController.h */,
 				046000BB198EC89B0091DE97 /* InitViewController.m */,
+				049208BC19B13BD400B3C46B /* LoginViewController.h */,
+				049208BD19B13BD400B3C46B /* LoginViewController.m */,
+				049208BF19B13C3100B3C46B /* CreateUserViewController.h */,
+				049208C019B13C3100B3C46B /* CreateUserViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -563,7 +573,9 @@
 				04DD0FAA1960959B00529446 /* TableData.m in Sources */,
 				04DD87EF197143C300E279F7 /* GamePrediction.m in Sources */,
 				042CC3F3195BBD550013FFA5 /* CurrentWeekTableViewController.m in Sources */,
+				049208C119B13C3100B3C46B /* CreateUserViewController.m in Sources */,
 				042CC40E195BBFD90013FFA5 /* RepositoryFactory.m in Sources */,
+				049208BE19B13BD400B3C46B /* LoginViewController.m in Sources */,
 				04DD0FB01960C7A000529446 /* ImageDataTableViewCell.m in Sources */,
 				04164C5E196A36EC004AFE19 /* PredictionHistoryEntry.m in Sources */,
 				042CC415195F7E8D0013FFA5 /* HomeViewTableViewCell.m in Sources */,
