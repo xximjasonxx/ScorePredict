@@ -1,4 +1,48 @@
-<div class="page-header">
-    <h1>Sticky footer with fixed navbar</h1>
+<div ng-controller="mainCtrl">
+    <div class="page-header">
+        <h1>Current Week</h1>
+    </div>
+
+    <input type="image" src="images/fblogin.png" ng-click="performLogin()"
+           width="200" height="42" ng-show="isAnonymous" />
+
+    <div ng-show="isAuthenticated">
+        <h4>Week {{weekNumber}} {{year}}</h4>
+
+        <div class="row">
+            <div class="col-md-4 gameBox" ng-repeat="result in results">
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <small>{{result.game.gameDay}} {{result.game.gameTime}}pm</small>
+                    </div>
+                </div>
+
+                <div class="row scoreRow">
+                    <div class="col-md-4">
+                        <div class="col-md-12"><h3 style="margin: 0; padding: 0;">{{result.game.awayAbbr}}</h3></div>
+                        <div class="col-md-12"><h3 style="margin: 0; padding: 0;">{{result.game.homeAbbr}}</h3></div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="col-md-10"><h3 style="margin: 0; padding: 0;">{{result.game.awayScore}}</h3></div>
+                        <div class="col-md-10"><h3 style="margin: 0; padding: 0;">{{result.game.homeScore}}</h3></div>
+                    </div>
+
+                    <div class="col-md-4 well gameStateCell">
+                        {{result.game.gameState | printState}}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h5 style="margin: 0; padding: 0;">
+                            Prediction: <strong>{{ result | predictionString }}</strong>
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </div>
-<p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added within <code>#wrap</code> with <code>padding-top: 60px;</code> on the <code>.container</code>.</p>

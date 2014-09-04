@@ -4,10 +4,11 @@
 angular.module('app', [
   'ngRoute',
   'ui.bootstrap',
-  'myApp.filters',
+  'app.filters',
   'app.services',
   'app.directives',
-  'app.controllers'
+  'app.controllers',
+  'azure-mobile-service.module'
 ]).
 config(['$routeProvider', '$httpProvider', function($routeProvider, $httpProvider) {
         // routing

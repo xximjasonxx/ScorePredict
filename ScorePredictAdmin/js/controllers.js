@@ -2,6 +2,67 @@
 
 /* Controllers */
 angular.module('app.controllers', [])
+    .controller('mainCtrl', ['$scope', 'Azureservice', function($scope, msClient) {
+        $scope.isAnonymous = !msClient.isLoggedIn();
+        $scope.isAuthenticated = msClient.isLoggedIn();
+
+        if ($scope.isAuthenticated) {
+            // just load the results
+            loadCurrentWeek();
+        }
+        else {
+            $scope.performLogin = function () {
+                msClient.login("facebook").then(function () {
+                    $scope.isAnonymous = false;
+                    $scope.isAuthenticated = true;
+
+                    loadCurrentWeek();
+                }, function (error) {
+                    alert("Login failed");
+                });
+            };
+        }
+
+        function loadCurrentWeek() {
+            msClient.invokeApi("weekfor", {
+                method: "GET",
+                body: null,
+                parameters: { weekForDate: moment().format('M/d/YYYY') }
+            }).then(function(response) {
+                loadWeekOf(response);
+            }, function(error) {
+                alert(error);
+            });
+        }
+
+        function loadWeekOf(result) {
+            $scope.weekNumber = result.weekNo;
+            $scope.year = result.year;
+            $scope.results = buildGames(result.games, result.predictions);
+        }
+
+        function buildGames(games, predictions) {
+            var gamesArray = [];
+            games.forEach(function(game) {
+               gamesArray.push({
+                  game: game,
+                  prediction: findPredictionForGame(predictions, game.gameId)
+               });
+            });
+
+            return gamesArray;
+        }
+
+        function findPredictionForGame(predictions, gameId) {
+            var result = null;
+            predictions.forEach(function(prediction) {
+                if (prediction.gameId == gameId)
+                    result = prediction;
+            });
+
+            return result;
+        }
+    }])
     .controller('teamsCtrl', ['$scope', '$modal', 'teamsSvc', function($scope, $modal, teamsSvc) {
         $scope.teams = [];
 

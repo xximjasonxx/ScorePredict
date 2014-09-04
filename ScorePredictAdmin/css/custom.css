@@ -1,0 +1,30 @@
+
+.gameBox {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+    display: table;
+    table-layout: fixed;
+    border: solid 2px lightgray;
+    margin-left: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+    .gameBox:hover {
+        background-color: lightblue;
+    }
+
+.gameStateCell {
+    background-color: transparent;
+    border-width: 0;
+    box-shadow: none;
+    margin: 0;
+}
+
+.scoreRow {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
