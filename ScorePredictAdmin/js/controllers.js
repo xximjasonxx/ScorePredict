@@ -24,15 +24,18 @@ angular.module('app.controllers', [])
         }
 
         function loadCurrentWeek() {
-            msClient.invokeApi("weekfor", {
+            var lookupDate = moment().format('M/d/YYYY');
+            debugger;
+
+            /*msClient.invokeApi("weekfor", {
                 method: "GET",
                 body: null,
-                parameters: { weekForDate: moment().format('M/d/YYYY') }
+                parameters: { weekForDate: lookupDate }
             }).then(function(response) {
                 loadWeekOf(response);
             }, function(error) {
                 alert(error);
-            });
+            });*/
         }
 
         function loadWeekOf(result) {
