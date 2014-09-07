@@ -17,6 +17,8 @@ import com.farrellsoft.TheScorePredict.Fragment.PregameFragment;
 import com.farrellsoft.TheScorePredict.Repository.RepositoryFactory;
 import com.farrellsoft.TheScorePredict.Repository.WeekRepository;
 
+import org.w3c.dom.Text;
+
 public class PredictionActivity extends FragmentActivity implements IPredictionUpdatedListener {
 
     public void onCreate(Bundle savedInstanceState) {
@@ -60,13 +62,13 @@ public class PredictionActivity extends FragmentActivity implements IPredictionU
 
     private void buildUI(Game game) {
         // get the views we will be updating
-        ImageView awayTeam = (ImageView) findViewById(R.id.awayTeam);
-        ImageView homeTeam = (ImageView) findViewById(R.id.homeTeam);
+        TextView awayTeam = (TextView) findViewById(R.id.tvAwayTeam);
+        TextView homeTeam = (TextView) findViewById(R.id.tvHomeTeam);
         TextView gameTime = (TextView) findViewById(R.id.gameTime);
 
         // set the values from the game
-        awayTeam.setImageDrawable(Convert.toDrawable(this, game.getAwayTeamAbbr()));
-        homeTeam.setImageDrawable(Convert.toDrawable(this, game.getHomeTeamAbbr()));
+        awayTeam.setText(game.getAwayTeamAbbr().toUpperCase());
+        homeTeam.setText(game.getHomeTeamAbbr().toUpperCase());
 
         GameTimeDisplayWrapper wrapper = new GameTimeDisplayWrapper(game.getTime());
         gameTime.setText(String.format("%s @ %s", game.getDay(), wrapper.toString()));

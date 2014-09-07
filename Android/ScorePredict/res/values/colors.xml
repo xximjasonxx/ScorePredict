@@ -4,4 +4,6 @@
     <color name="defaultGreen">#004E00</color>
     <color name="holo_blue_dark">#ff0099cc</color>
     <color name="holo_green_dark">#ff669900</color>
+
+    <color name="title_green">#ff006c00</color>
 </resources>

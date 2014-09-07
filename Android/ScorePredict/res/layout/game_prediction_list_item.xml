@@ -12,11 +12,13 @@
                       android:orientation="vertical" android:gravity="top" android:layout_marginRight="7dp">
 
             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:orientation="horizontal">
+                          android:orientation="horizontal" android:layout_marginLeft="15dp">
 
-                <ImageView android:layout_height="40dp" android:layout_width="wrap_content"
-                           android:scaleType="fitEnd" android:src="@drawable/ari"
-                           android:layout_marginBottom="5dp" android:id="@+id/awayTeam" />
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+                           android:scaleType="fitEnd" android:text="ARI"
+                           android:layout_marginBottom="5dp" android:id="@+id/tvAwayTeam"
+                           style="@android:style/TextAppearance.DeviceDefault.Large"
+                           android:textColor="@color/title_green" />
 
                 <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
                           android:textSize="25sp" android:text="25" android:gravity="center_vertical"
@@ -26,16 +28,18 @@
                           android:text="26"
                           android:textSize="25sp" android:gravity="center_vertical"
                           android:layout_marginLeft="10dp" android:id="@+id/awayPrediction"
-                          android:textColor="@android:color/holo_blue_dark"/>
+                          android:textColor="@android:color/holo_blue_dark" />
 
             </LinearLayout>
 
             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
-                          android:orientation="horizontal">
+                          android:orientation="horizontal" android:layout_marginLeft="15dp">
 
-                <ImageView android:layout_height="40dp" android:layout_width="wrap_content"
-                           android:scaleType="fitEnd" android:src="@drawable/ari"
-                           android:layout_marginBottom="5dp" android:id="@+id/homeTeam" />
+                <TextView android:layout_height="wrap_content" android:layout_width="wrap_content"
+                           android:scaleType="fitEnd" android:text="ARI"
+                           android:layout_marginBottom="5dp" android:id="@+id/tvHomeTeam"
+                           style="@android:style/TextAppearance.DeviceDefault.Large"
+                           android:textColor="@color/title_green" />
 
                 <TextView android:layout_width="wrap_content" android:layout_height="match_parent"
                           android:textSize="25sp" android:text="25" android:gravity="center_vertical"

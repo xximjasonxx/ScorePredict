@@ -31,11 +31,11 @@ public class GamesHistoryListAdapter extends ArrayAdapter<GamePrediction>
         if (gamePrediction != null) {
             // get the fields
             ((TextView) convertView.findViewById(R.id.tvGameTime)).setText(new GameTimeDisplayWrapper(gamePrediction.getGameTime()).toString());
-            ((ImageView) convertView.findViewById(R.id.awayTeam)).setImageDrawable(Convert.toDrawable(getContext(), gamePrediction.getAwayTeam().toLowerCase()));
+            ((TextView) convertView.findViewById(R.id.tvAwayTeam)).setText(gamePrediction.getAwayTeam().toUpperCase());
             ((TextView) convertView.findViewById(R.id.awayScore)).setText(String.format("%d", gamePrediction.getAwayScore()));
             ((TextView) convertView.findViewById(R.id.awayPrediction)).setText(String.format("%d", gamePrediction.getPredictedAwayScore()));
 
-            ((ImageView) convertView.findViewById(R.id.homeTeam)).setImageDrawable(Convert.toDrawable(getContext(), gamePrediction.getHomeTeam().toLowerCase()));
+            ((TextView) convertView.findViewById(R.id.tvHomeTeam)).setText(gamePrediction.getHomeTeam().toUpperCase());
             ((TextView) convertView.findViewById(R.id.homeScore)).setText(String.format("%d", gamePrediction.getHomeScore()));
             ((TextView) convertView.findViewById(R.id.homePrediction)).setText(String.format("%d", gamePrediction.getPredictedHomeScore()));
 

@@ -14,9 +14,8 @@
 
         <com.farrellsoft.TheScorePredict.Views.RegisteredTextView
             android:layout_width="wrap_content"
-                                                               android:layout_height="wrap_content"
-                               android:text="Minnesota Vikings" android:id="@+id/awayTeamName"
-                               android:textSize="18sp" />
+            android:layout_height="wrap_content" android:text="Minnesota Vikings"
+            android:id="@+id/awayTeamName" android:textSize="18sp" />
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                 android:text="27" android:id="@+id/awayFinalScore" android:textSize="18sp"
@@ -28,10 +27,9 @@
                   android:orientation="horizontal">
 
         <com.farrellsoft.TheScorePredict.Views.RegisteredTextView
-            android:layout_width="wrap_content"
-                                                               android:layout_height="wrap_content"
-                               android:text="Minnesota Vikings" android:id="@+id/homeTeamName"
-                               android:textSize="18sp" />
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Minnesota Vikings" android:id="@+id/homeTeamName"
+            android:textSize="18sp" />
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:text="27" android:id="@+id/homeFinalScore" android:textSize="18sp"
