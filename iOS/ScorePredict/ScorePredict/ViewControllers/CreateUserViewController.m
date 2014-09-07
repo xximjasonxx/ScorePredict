@@ -21,4 +21,15 @@
     self.navigationController.navigationBar.hidden = NO;
 }
 
+-(IBAction)createUser:(id)sender
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Creating User"
+                                                        message:@"Creating the new user"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
+}
+
 @end

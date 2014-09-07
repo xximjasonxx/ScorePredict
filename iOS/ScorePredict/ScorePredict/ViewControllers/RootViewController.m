@@ -17,15 +17,15 @@
 
 -(void)viewDidLoad
 {
-    self.navigationController.navigationBar.hidden = YES;
-}
-
--(void)viewDidAppear:(BOOL)animated
-{
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"UserId"] != nil && [defaults objectForKey:@"Token"] != nil) {
         [self goToMainView];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning

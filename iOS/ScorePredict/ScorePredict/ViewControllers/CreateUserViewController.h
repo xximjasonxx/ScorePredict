@@ -10,4 +10,6 @@
 
 @interface CreateUserViewController : UIViewController
 
+-(IBAction)createUser:(id)sender;
+
 @end

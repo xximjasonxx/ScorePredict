@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cmS-a1-3HQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="14A329f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cmS-a1-3HQ">
     <dependencies>
         <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -33,13 +33,6 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="bbg-No-BYL">
                                 <rect key="frame" x="20" y="91" width="280" height="319"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <accessibility key="accessibilityConfiguration">
-                                    <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
-                                </accessibility>
-                            </imageView>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="3OQ-3i-hxs">
-                                <rect key="frame" x="30" y="101" width="280" height="319"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
@@ -115,26 +108,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-tk-sK5">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Pb-tk-sK5">
                                 <rect key="frame" x="15" y="189" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="E6Q-th-vEu"/>
+                                    <constraint firstAttribute="width" constant="280" id="XeK-wS-Lqv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVA-Yf-nIh">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JVA-Yf-nIh">
                                 <rect key="frame" x="15" y="227" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="DVG-LM-jsx"/>
+                                    <constraint firstAttribute="height" constant="30" id="MeM-fu-DLv"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLK-dD-pvJ">
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLK-dD-pvJ">
                                 <rect key="frame" x="252" y="269" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-UX-FPR">
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-UX-FPR">
                                 <rect key="frame" x="15" y="269" width="94" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create User">
@@ -144,11 +145,11 @@
                                     <segue destination="fNi-pQ-qqj" kind="push" id="Yec-En-kf7"/>
                                 </connections>
                             </button>
-                            <view appearanceType="aqua" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pe9-fn-xe8">
+                            <view appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pe9-fn-xe8">
                                 <rect key="frame" x="20" y="393" width="280" height="155"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUj-E0-Nm2">
+                                    <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUj-E0-Nm2">
                                         <rect key="frame" x="77" y="125" width="100" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Use Facebook">
@@ -166,19 +167,36 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="6sH-x9-Chu"/>
                                     <constraint firstAttribute="height" constant="155" id="dfv-XH-oID"/>
+                                    <constraint firstAttribute="centerX" secondItem="ZUj-E0-Nm2" secondAttribute="centerX" id="ueS-Dj-4Ul"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZUj-E0-Nm2" secondAttribute="bottom" id="utG-Nz-XeS"/>
                                 </constraints>
                             </view>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="CJ2-gr-W71">
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="CJ2-gr-W71">
                                 <rect key="frame" x="105" y="68" width="100" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Cd2-OY-NK2"/>
+                                    <constraint firstAttribute="height" constant="113" id="iMC-M4-aor"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="bVI-pZ-Nxv" firstAttribute="top" secondItem="pe9-fn-xe8" secondAttribute="bottom" constant="20" id="exm-aT-mx8"/>
+                            <constraint firstAttribute="centerX" secondItem="pe9-fn-xe8" secondAttribute="centerX" id="E43-Ws-ji8"/>
+                            <constraint firstItem="JVA-Yf-nIh" firstAttribute="top" secondItem="2Pb-tk-sK5" secondAttribute="bottom" constant="8" id="Fjt-Ll-Yfr"/>
+                            <constraint firstAttribute="centerX" secondItem="2Pb-tk-sK5" secondAttribute="centerX" id="HZX-EL-Nqb"/>
+                            <constraint firstItem="JVA-Yf-nIh" firstAttribute="leading" secondItem="x9D-UX-FPR" secondAttribute="leading" id="KhI-ZA-AtS"/>
+                            <constraint firstItem="CJ2-gr-W71" firstAttribute="top" secondItem="SyT-Jp-4UJ" secondAttribute="bottom" constant="4" id="dRj-uf-Lmf"/>
+                            <constraint firstAttribute="centerX" secondItem="CJ2-gr-W71" secondAttribute="centerX" id="jM4-8z-FgK"/>
+                            <constraint firstItem="JVA-Yf-nIh" firstAttribute="trailing" secondItem="SLK-dD-pvJ" secondAttribute="trailing" constant="5" id="jr8-6W-pEG"/>
+                            <constraint firstItem="2Pb-tk-sK5" firstAttribute="top" secondItem="CJ2-gr-W71" secondAttribute="bottom" constant="8" id="kh4-HD-4Ti"/>
+                            <constraint firstItem="x9D-UX-FPR" firstAttribute="top" secondItem="JVA-Yf-nIh" secondAttribute="bottom" constant="12" id="ove-SY-aJb"/>
+                            <constraint firstItem="bVI-pZ-Nxv" firstAttribute="top" secondItem="pe9-fn-xe8" secondAttribute="bottom" constant="20" id="pc7-eY-aTu"/>
+                            <constraint firstItem="SLK-dD-pvJ" firstAttribute="top" secondItem="JVA-Yf-nIh" secondAttribute="bottom" constant="12" id="pjY-Rp-xZ9"/>
+                            <constraint firstAttribute="centerX" secondItem="JVA-Yf-nIh" secondAttribute="centerX" id="rRy-D8-Yuv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HiO-Ws-OyF"/>
@@ -199,40 +217,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="uCV-77-TlQ">
+                            <imageView appearanceType="aqua" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="uCV-77-TlQ">
                                 <rect key="frame" x="110" y="67" width="100" height="113"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" image="YES" notEnabled="YES"/>
                                 </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="6MV-mT-qNT"/>
+                                    <constraint firstAttribute="height" constant="113" id="P65-1L-nsp"/>
+                                </constraints>
                             </imageView>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-xQ-RyA">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-xQ-RyA">
                                 <rect key="frame" x="20" y="188" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="1w7-M9-rJg"/>
+                                    <constraint firstAttribute="height" constant="30" id="zq8-rf-VI4"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sD-s1-560">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1sD-s1-560">
                                 <rect key="frame" x="20" y="226" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="LUE-7C-SXh"/>
+                                    <constraint firstAttribute="width" constant="280" id="nai-xr-mkA"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Brp-xs-Gwp">
+                            <textField appearanceType="aqua" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Brp-xs-Gwp">
                                 <rect key="frame" x="20" y="264" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Da0-g3-xzx"/>
+                                    <constraint firstAttribute="height" constant="30" id="am2-JM-moM"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-vt-WOh">
+                            <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCg-vt-WOh">
                                 <rect key="frame" x="254" y="302" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Create">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createUser:" destination="fNi-pQ-qqj" eventType="touchUpInside" id="gMI-2w-Acd"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1sD-s1-560" firstAttribute="top" secondItem="CVO-xQ-RyA" secondAttribute="bottom" constant="8" id="4jd-XP-akc"/>
+                            <constraint firstItem="yCg-vt-WOh" firstAttribute="trailing" secondItem="Brp-xs-Gwp" secondAttribute="trailing" id="GEG-3u-PvT"/>
+                            <constraint firstItem="Brp-xs-Gwp" firstAttribute="top" secondItem="1sD-s1-560" secondAttribute="bottom" constant="8" id="NpH-Ha-v5d"/>
+                            <constraint firstItem="CVO-xQ-RyA" firstAttribute="top" secondItem="uCV-77-TlQ" secondAttribute="bottom" constant="8" id="RgA-dR-TdR"/>
+                            <constraint firstAttribute="centerX" secondItem="uCV-77-TlQ" secondAttribute="centerX" id="gFw-fI-JKi"/>
+                            <constraint firstItem="yCg-vt-WOh" firstAttribute="top" secondItem="Brp-xs-Gwp" secondAttribute="bottom" constant="8" id="gzq-wT-Met"/>
+                            <constraint firstItem="uCV-77-TlQ" firstAttribute="top" secondItem="4Zb-ec-gLr" secondAttribute="bottom" constant="3" id="nlT-zD-uta"/>
+                            <constraint firstAttribute="centerX" secondItem="1sD-s1-560" secondAttribute="centerX" id="uQ3-1K-Nkc"/>
+                            <constraint firstAttribute="centerX" secondItem="Brp-xs-Gwp" secondAttribute="centerX" id="wh4-6k-abw"/>
+                            <constraint firstAttribute="centerX" secondItem="CVO-xQ-RyA" secondAttribute="centerX" id="z45-dZ-6Y9"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L13-FW-50Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
