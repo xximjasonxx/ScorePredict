@@ -24,8 +24,6 @@
     }
 
     return client;
-    
-    return nil;
 }
 
 @end

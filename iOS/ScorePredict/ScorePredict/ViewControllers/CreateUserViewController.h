@@ -10,6 +10,12 @@
 
 @interface CreateUserViewController : UIViewController
 
--(IBAction)createUser:(id)sender;
+// properties
+@property (nonatomic, retain) IBOutlet UITextField *usernameTextField;
+@property (nonatomic, retain) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, retain) IBOutlet UITextField *confirmTextField;
+
+// methods
+-(IBAction)createUser;
 
 @end

@@ -90,6 +90,7 @@
                     </navigationBar>
                     <connections>
                         <segue destination="HBz-3C-jUq" kind="relationship" relationship="rootViewController" id="18j-nR-X2P"/>
+                        <segue destination="xrQ-pU-ZgX" kind="modal" identifier="showApp" modalTransitionStyle="coverVertical" id="mJs-ds-rgA"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OU7-U9-UHw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -134,6 +135,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login" destination="RRC-o3-8aF" eventType="touchUpInside" id="aEN-P6-4vv"/>
+                                </connections>
                             </button>
                             <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9D-UX-FPR">
                                 <rect key="frame" x="15" y="269" width="94" height="30"/>
@@ -283,6 +287,7 @@
                             <constraint firstAttribute="centerX" secondItem="CVO-xQ-RyA" secondAttribute="centerX" id="z45-dZ-6Y9"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="MpM-Qy-p4X"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L13-FW-50Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
