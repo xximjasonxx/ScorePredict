@@ -79,10 +79,11 @@ UserService *userService;
 -(void)handleSuccessfulUserCreateWithData:(NSDictionary *)data {
     // get the values from the data
     NSString *userId = [data objectForKey:@"id"];
+    NSString *token = [data objectForKey:@"token"];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setValue:userId forKey:@"UserId"];
-    [defaults setValue:userId forKey:@"Token"];
+    [defaults setValue:token forKey:@"Token"];
     [defaults synchronize];
     
     [self goToMainView];

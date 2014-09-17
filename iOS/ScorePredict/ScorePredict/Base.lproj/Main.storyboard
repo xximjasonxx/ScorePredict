@@ -288,6 +288,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MpM-Qy-p4X"/>
+                    <connections>
+                        <outlet property="confirmTextField" destination="Brp-xs-Gwp" id="9iv-M6-azc"/>
+                        <outlet property="passwordTextField" destination="1sD-s1-560" id="e7B-cS-gkz"/>
+                        <outlet property="usernameTextField" destination="CVO-xQ-RyA" id="l94-54-m3s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L13-FW-50Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
