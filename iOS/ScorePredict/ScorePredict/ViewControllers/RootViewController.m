@@ -15,12 +15,17 @@
 
 @implementation RootViewController
 
--(void)viewDidAppear:(BOOL)animated
+-(void)viewDidLoad
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([defaults objectForKey:@"UserId"] != nil && [defaults objectForKey:@"Token"] != nil) {
         [self goToMainView];
     }
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,11 +71,7 @@
 }
 
 - (void)goToMainView {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    
-    InitViewController *mainView =  (InitViewController*)[storyboard instantiateViewControllerWithIdentifier:@"MainView"];
-    [mainView setModalPresentationStyle:UIModalPresentationFullScreen];
-    [self presentViewController:mainView animated:NO completion:nil];
+    [self.navigationController performSegueWithIdentifier:@"showApp" sender:self.navigationController];
 }
 
 @end
