@@ -16,6 +16,6 @@
 @property (nonatomic, retain) IBOutlet UITextField *confirmTextField;
 
 // methods
--(IBAction)createUser;
+-(IBAction)createUser:(id)sender;
 
 @end

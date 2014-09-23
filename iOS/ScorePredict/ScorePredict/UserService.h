@@ -15,4 +15,10 @@
          password:(NSString *)password
          complete:(void (^)(NSDictionary* data))completeHandler
             error:(void (^)(NSString *errorMessage))errorHandler;
+
+-(void)login:(NSString *)username
+    password:(NSString *)password
+    complete:(void (^)(NSDictionary *data))completeHandler
+       error:(void (^)(NSString *errorMessage))errorHandler;
+
 @end

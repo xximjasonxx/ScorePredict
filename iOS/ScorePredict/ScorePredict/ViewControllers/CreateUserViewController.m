@@ -10,10 +10,6 @@
 #import "UserService.h"
 #import "InitViewController.h"
 
-@interface CreateUserViewController ()
-
-@end
-
 @implementation CreateUserViewController
 @synthesize usernameTextField, passwordTextField, confirmTextField;
 

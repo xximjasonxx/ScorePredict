@@ -34,4 +34,26 @@
     }];
 }
 
+-(void)login:(NSString *)username password:(NSString *)password complete:(void (^)(NSDictionary *))completeHandler error:(void (^)(NSString *))errorHandler
+{
+    NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+    [dictionary setObject:username forKey:@"username"];
+    [dictionary setObject:password forKey:@"password"];
+    
+    MSClient *client = [ClientFactory getClient];
+    [client invokeAPI:@"login"
+                 body:dictionary
+           HTTPMethod:@"post"
+           parameters:nil
+              headers:nil
+           completion:^(id result, NSHTTPURLResponse *response, NSError *error) {
+               if (error == nil) {
+                   completeHandler((NSDictionary *)result);
+               }
+               else {
+                   errorHandler(error.localizedDescription);
+               }
+           }];
+}
+
 @end
