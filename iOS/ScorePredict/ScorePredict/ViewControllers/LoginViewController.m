@@ -32,11 +32,14 @@ UserService *userService;
         return;
     }
     
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
     [userService login:username
               password:password
               complete:^(NSDictionary *data) {
+                  [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
                   [self handleSuccessfulLogin:data];
               } error:^(NSString *errorMessage) {
+                  [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
                   [self showAlertMessage:errorMessage];
               }];
 }
