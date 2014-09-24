@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "UserService.h"
+#import "ViewHelper.h"
 
 @implementation LoginViewController
 @synthesize usernameTextField, passwordTextField;
@@ -32,14 +33,14 @@ UserService *userService;
         return;
     }
     
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+    [ViewHelper showWaitingView:self.view];
     [userService login:username
               password:password
               complete:^(NSDictionary *data) {
-                  [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+                  [ViewHelper hideWaitingView];
                   [self handleSuccessfulLogin:data];
               } error:^(NSString *errorMessage) {
-                  [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+                  [ViewHelper hideWaitingView];
                   [self showAlertMessage:errorMessage];
               }];
 }

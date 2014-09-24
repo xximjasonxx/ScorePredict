@@ -10,6 +10,7 @@
 #import "PredictionHistoryService.h"
 #import "PredictionSummaryTableViewCell.h"
 #import "GamePrediction.h"
+#import "ViewHelper.h"
 
 @implementation HistoryGamesTableViewController
 @synthesize weekNumber, year;
@@ -25,20 +26,21 @@ int totalPoints;
     self.title = [NSString stringWithFormat:@"Week %d", weekNumber];
     totalPoints = 0;
     historyService = [[PredictionHistoryService alloc] init];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+    
+    [ViewHelper showWaitingView:self.view];
     [historyService getPredictionGameHistoryForWeekNumber:self.weekNumber andYear:self.year andDelegate:self];
 }
 
 -(void)retrievedGamesHistory:(NSArray *)predictionGames
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    [ViewHelper hideWaitingView];
     games = predictionGames;
     [self.tableView reloadData];
 }
 
 -(void)retrievalFailed
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    [ViewHelper hideWaitingView];
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
                                                         message:@"Failed to retrieve Game data"
                                                        delegate:nil

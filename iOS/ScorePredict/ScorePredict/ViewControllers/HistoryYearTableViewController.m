@@ -11,6 +11,7 @@
 #import "PredictionHistoryService.h"
 #import "PredictionHistoryEntry.h"
 #import "SWRevealViewController.h"
+#import "ViewHelper.h"
 
 @implementation HistoryYearTableViewController
 @synthesize menuItem;
@@ -26,7 +27,8 @@ PredictionHistoryService *historyService;
     predictionHistory = [[NSArray alloc] init];
     
     historyService = [[PredictionHistoryService alloc] init];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+    
+    [ViewHelper showWaitingView:self.view];
     [historyService getPredictionData:self];
     
     menuItem.target = self.revealViewController;
@@ -38,14 +40,14 @@ PredictionHistoryService *historyService;
 
 -(void)predictionDataRetrieved:(NSArray *)historyArray
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    [ViewHelper hideWaitingView];
     predictionHistory = historyArray;
     [self.tableView reloadData];
 }
 
 -(void)retrievalFailed
 {
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+    [ViewHelper hideWaitingView];
     UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Error"
                                                          message:@"Failed to Get Prediction Years"
                                                         delegate:nil

@@ -10,6 +10,7 @@
 #import "RootViewController.h"
 #import "InitViewController.h"
 #import "ClientFactory.h"
+#import "ViewHelper.h"
 
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 
@@ -28,19 +29,13 @@
     self.navigationController.navigationBar.hidden = YES;
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 -(IBAction)executeLogin:(id)sender
 {
     MSClient *client = [ClientFactory getClient];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+    [ViewHelper showWaitingView:self.view];
     
     [client loginWithProvider:@"facebook" controller:self animated:YES completion:^(MSUser *user, NSError *error) {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
+        [ViewHelper hideWaitingView];
         
         if (error == nil) {
             // store the credentials

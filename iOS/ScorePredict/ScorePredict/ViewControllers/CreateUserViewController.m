@@ -9,6 +9,7 @@
 #import "CreateUserViewController.h"
 #import "UserService.h"
 #import "InitViewController.h"
+#import "ViewHelper.h"
 
 @implementation CreateUserViewController
 @synthesize usernameTextField, passwordTextField, confirmTextField;
@@ -43,12 +44,14 @@ UserService *userService;
     }
     
     // attempt to create the user
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = true;
+    [ViewHelper showWaitingView:self.view];
     [userService createUser:username
                    password:password
                    complete:^(NSDictionary *data) {
+                       [ViewHelper hideWaitingView];
                        [self handleSuccessfulUserCreateWithData:data];
                    } error:^(NSString *errorMessage) {
+                       [ViewHelper hideWaitingView];
                        [self showAlertMessage:errorMessage];
                    }];
 }
