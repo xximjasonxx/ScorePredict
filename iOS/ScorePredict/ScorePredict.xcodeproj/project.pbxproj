@@ -12,6 +12,7 @@
 		04164C5E196A36EC004AFE19 /* PredictionHistoryEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 04164C5D196A36EC004AFE19 /* PredictionHistoryEntry.m */; };
 		04165F2F19D26A8D006DDB64 /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04165F2E19D26A8D006DDB64 /* DejalActivityView.m */; };
 		04165F3219D26DC5006DDB64 /* ViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 04165F3119D26DC5006DDB64 /* ViewHelper.m */; };
+		041D4D9C19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 041D4D9B19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.m */; };
 		042256B31960C9AD00CB565C /* DataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042256B21960C9AD00CB565C /* DataTableViewCell.m */; };
 		042CC386195912DA0013FFA5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042CC385195912DA0013FFA5 /* Foundation.framework */; };
 		042CC388195912DA0013FFA5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 042CC387195912DA0013FFA5 /* CoreGraphics.framework */; };
@@ -100,6 +101,8 @@
 		04165F2E19D26A8D006DDB64 /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
 		04165F3019D26DC5006DDB64 /* ViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewHelper.h; path = Core/ViewHelper.h; sourceTree = "<group>"; };
 		04165F3119D26DC5006DDB64 /* ViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewHelper.m; path = Core/ViewHelper.m; sourceTree = "<group>"; };
+		041D4D9A19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScorePredictViewControllerBaseViewController.h; path = ViewControllers/Base/ScorePredictViewControllerBaseViewController.h; sourceTree = "<group>"; };
+		041D4D9B19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ScorePredictViewControllerBaseViewController.m; path = ViewControllers/Base/ScorePredictViewControllerBaseViewController.m; sourceTree = "<group>"; };
 		042256B11960C9AD00CB565C /* DataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataTableViewCell.h; sourceTree = "<group>"; };
 		042256B21960C9AD00CB565C /* DataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataTableViewCell.m; sourceTree = "<group>"; };
 		042CC382195912DA0013FFA5 /* ScorePredict.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScorePredict.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -230,6 +233,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		041D4D9919D64F8D009B59DB /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				041D4D9A19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.h */,
+				041D4D9B19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		042CC379195912DA0013FFA5 = {
 			isa = PBXGroup;
 			children = (
@@ -315,6 +327,7 @@
 		042CC3BA195914200013FFA5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				041D4D9919D64F8D009B59DB /* Base */,
 				044E571A1964E44C00F0BB63 /* AboutNavigationController.h */,
 				044E571B1964E44C00F0BB63 /* AboutNavigationController.m */,
 				042CC3DB195A664D0013FFA5 /* AboutViewController.h */,
@@ -610,6 +623,7 @@
 				042CC3E2195A691D0013FFA5 /* ClientFactory.m in Sources */,
 				042CC3DA195A65250013FFA5 /* HistoryNavigationController.m in Sources */,
 				042CC3F7195BBE300013FFA5 /* CurrentWeekService.m in Sources */,
+				041D4D9C19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.m in Sources */,
 				042CC3C41959176E0013FFA5 /* RootViewController.m in Sources */,
 				044E571C1964E44C00F0BB63 /* AboutNavigationController.m in Sources */,
 				042CC3D7195A64AF0013FFA5 /* CurrentWeekNavigationControllerViewController.m in Sources */,

@@ -23,6 +23,17 @@ UserService *userService;
     userService = [[UserService alloc] init];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.usernameTextField)
+        [self.passwordTextField becomeFirstResponder];
+    
+    if (textField == self.passwordTextField)
+        [self login:nil];
+    
+    return YES;
+}
+
 - (IBAction)login:(id)sender {
     NSString *username = usernameTextField.text;
     NSString *password = passwordTextField.text;
