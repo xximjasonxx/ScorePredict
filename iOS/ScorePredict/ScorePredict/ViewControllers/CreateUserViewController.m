@@ -25,6 +25,20 @@ UserService *userService;
     userService = [[UserService alloc] init];
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.usernameTextField)
+        [passwordTextField becomeFirstResponder];
+    
+    if (textField == passwordTextField)
+        [confirmTextField becomeFirstResponder];
+    
+    if (textField == confirmTextField)
+        [self createUser:nil];
+    
+    return YES;
+}
+
 -(IBAction)createUser:(id)sender
 {
     NSString *username = self.usernameTextField.text;

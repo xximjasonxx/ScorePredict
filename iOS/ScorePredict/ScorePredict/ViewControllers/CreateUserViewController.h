@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateUserViewController : UIViewController
+#import "ScorePredictViewControllerBaseViewController.h"
+
+@interface CreateUserViewController : ScorePredictViewControllerBaseViewController <UITextFieldDelegate>
 
 // properties
 @property (nonatomic, retain) IBOutlet UITextField *usernameTextField;
