@@ -15,6 +15,7 @@
 @synthesize usernameTextField, passwordTextField, confirmTextField;
 
 UserService *userService;
+CGFloat originalY;
 
 - (void)viewDidLoad
 {
@@ -23,6 +24,10 @@ UserService *userService;
     self.navigationController.navigationBar.hidden = NO;
     
     userService = [[UserService alloc] init];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];;
+    originalY = self.view.frame.origin.y;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -39,10 +44,38 @@ UserService *userService;
     return YES;
 }
 
+- (void)keyboardWillHide:(NSNotification *)sender
+{
+    self.view.frame = CGRectMake(self.view.frame.origin.x,
+                                 originalY,
+                                 self.view.frame.size.width,
+                                 self.view.frame.size. height);
+}
+
+- (void)keyboardDidShow:(NSNotification *)sender
+{
+    CGRect frame = [sender.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    CGRect newFrame = [self.view convertRect:frame fromView:[[UIApplication sharedApplication] delegate].window];
+    CGFloat keyboardYPosition = newFrame.origin.y;
+    CGFloat yPosition = confirmTextField.frame.origin.y + confirmTextField.frame.size.height + 8;
+    
+    if (yPosition > keyboardYPosition)
+    {
+        // textfield is appearing underneath the keyboard
+        // need to shift the view up
+        CGFloat difference = yPosition - keyboardYPosition;
+        self.view.frame = CGRectMake(self.view.frame.origin.x,
+                                     self.view.frame.origin.y - difference,
+                                     self.view.frame.size.width,
+                                     self.view.frame.size. height);
+    }
+}
+
 -(IBAction)createUser:(id)sender
 {
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;
+    [confirmTextField resignFirstResponder];
     
     // validate that username and password are not empty
     if ([self isEmpty:username] || [self isEmpty:password]) {
