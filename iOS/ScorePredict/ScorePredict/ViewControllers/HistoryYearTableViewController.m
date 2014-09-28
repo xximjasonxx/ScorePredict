@@ -28,7 +28,7 @@ PredictionHistoryService *historyService;
     
     historyService = [[PredictionHistoryService alloc] init];
     
-    [ViewHelper showWaitingView:self.view];
+    [ViewHelper showWaitingView:self.navigationController.view];
     [historyService getPredictionData:self];
     
     menuItem.target = self.revealViewController;

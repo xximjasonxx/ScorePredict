@@ -91,7 +91,7 @@ CGFloat originalY;
     }
     
     // attempt to create the user
-    [ViewHelper showWaitingView:self.view];
+    [ViewHelper showWaitingView:self.navigationController.view];
     [userService createUser:username
                    password:password
                    complete:^(NSDictionary *data) {

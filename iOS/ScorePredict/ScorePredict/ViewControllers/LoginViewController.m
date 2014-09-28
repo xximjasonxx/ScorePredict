@@ -44,7 +44,7 @@ UserService *userService;
         return;
     }
     
-    [ViewHelper showWaitingView:self.view];
+    [ViewHelper showWaitingView:self.navigationController.view];
     [userService login:username
               password:password
               complete:^(NSDictionary *data) {
