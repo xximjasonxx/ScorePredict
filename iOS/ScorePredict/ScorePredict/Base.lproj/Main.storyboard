@@ -1015,9 +1015,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.0" green="0.30588235289999999" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <segue destination="HBz-3C-jUq" kind="modal" identifier="logout" modalTransitionStyle="coverVertical" id="JtP-zR-aFr"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -1177,6 +1174,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Cva-XX-Nw0"/>
-        <segue reference="18j-nR-X2P"/>
     </inferredMetricsTieBreakers>
 </document>

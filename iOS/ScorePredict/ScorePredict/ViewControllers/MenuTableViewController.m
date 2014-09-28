@@ -13,6 +13,7 @@
 @synthesize menuItems;
 
 UIColor *backgroundColor;
+const int LOGOUT_OPTION = 4;
 
 -(void)viewDidLoad
 {
@@ -55,6 +56,14 @@ UIColor *backgroundColor;
     return indexPath.row != 0;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == LOGOUT_OPTION)
+    {
+        [self logout];
+    }
+}
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ( [segue isKindOfClass: [SWRevealViewControllerSegue class]] ) {
@@ -66,15 +75,17 @@ UIColor *backgroundColor;
             [self.revealViewController setFrontViewPosition: FrontViewPositionLeft animated: YES];
         };        
     }
-    else if ([segue.identifier isEqualToString:@"logout"]) {
-        // clear the stored information
+}
+
+-(void)logout
+{
+    // remove identifying information
+    [self.parentViewController dismissViewControllerAnimated:true completion:^{
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults removeObjectForKey:@"Token"];
         [defaults removeObjectForKey:@"UserUd"];
         [defaults synchronize];
-        
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = false;
-    }
+    }];
 }
 
 @end
