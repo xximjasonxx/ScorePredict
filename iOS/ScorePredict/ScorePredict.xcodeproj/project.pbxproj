@@ -57,6 +57,8 @@
 		042CC40E195BBFD90013FFA5 /* RepositoryFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CC409195BBFD90013FFA5 /* RepositoryFactory.m */; };
 		042CC40F195BBFD90013FFA5 /* WeekRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CC40B195BBFD90013FFA5 /* WeekRepository.m */; };
 		042CC415195F7E8D0013FFA5 /* HomeViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 042CC414195F7E8D0013FFA5 /* HomeViewTableViewCell.m */; };
+		0431A73219D83D21008B8905 /* PregamePredictionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431A73119D83D21008B8905 /* PregamePredictionTableViewController.m */; };
+		0431A73519D84252008B8905 /* PredictionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431A73419D84252008B8905 /* PredictionService.m */; };
 		043B87CB1972A58800730C0B /* PredictionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */; };
 		044CD8DF197CAB300045F926 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CD8DE197CAB300045F926 /* MenuTableViewController.m */; };
 		044E571C1964E44C00F0BB63 /* AboutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E571B1964E44C00F0BB63 /* AboutNavigationController.m */; };
@@ -166,6 +168,10 @@
 		042CC410195BC0890013FFA5 /* CurrentWeekProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CurrentWeekProtocol.h; sourceTree = "<group>"; };
 		042CC413195F7E8D0013FFA5 /* HomeViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewTableViewCell.h; sourceTree = "<group>"; };
 		042CC414195F7E8D0013FFA5 /* HomeViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewTableViewCell.m; sourceTree = "<group>"; };
+		0431A73019D83D21008B8905 /* PregamePredictionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PregamePredictionTableViewController.h; path = ViewControllers/PregamePredictionTableViewController.h; sourceTree = "<group>"; };
+		0431A73119D83D21008B8905 /* PregamePredictionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PregamePredictionTableViewController.m; path = ViewControllers/PregamePredictionTableViewController.m; sourceTree = "<group>"; };
+		0431A73319D84252008B8905 /* PredictionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictionService.h; sourceTree = "<group>"; };
+		0431A73419D84252008B8905 /* PredictionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictionService.m; sourceTree = "<group>"; };
 		043B87C91972A58800730C0B /* PredictionSummaryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PredictionSummaryTableViewCell.h; sourceTree = "<group>"; };
 		043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictionSummaryTableViewCell.m; sourceTree = "<group>"; };
 		044CD8DD197CAB300045F926 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = ViewControllers/MenuTableViewController.h; sourceTree = "<group>"; };
@@ -350,6 +356,8 @@
 				04DD0FA6196092B500529446 /* PredictionTableViewController.m */,
 				042CC3C21959176E0013FFA5 /* RootViewController.h */,
 				042CC3C31959176E0013FFA5 /* RootViewController.m */,
+				0431A73019D83D21008B8905 /* PregamePredictionTableViewController.h */,
+				0431A73119D83D21008B8905 /* PregamePredictionTableViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -413,6 +421,8 @@
 				04F4BA0319708F0700C7454E /* GetPredictionGamesHistoryProtocol.h */,
 				046980F719BD232C0040252B /* UserService.h */,
 				046980F819BD232C0040252B /* UserService.m */,
+				0431A73319D84252008B8905 /* PredictionService.h */,
+				0431A73419D84252008B8905 /* PredictionService.m */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -589,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DD0FAA1960959B00529446 /* TableData.m in Sources */,
+				0431A73219D83D21008B8905 /* PregamePredictionTableViewController.m in Sources */,
 				04DD87EF197143C300E279F7 /* GamePrediction.m in Sources */,
 				042CC3F3195BBD550013FFA5 /* CurrentWeekTableViewController.m in Sources */,
 				049208C119B13C3100B3C46B /* CreateUserViewController.m in Sources */,
@@ -619,6 +630,7 @@
 				042CC40F195BBFD90013FFA5 /* WeekRepository.m in Sources */,
 				042256B31960C9AD00CB565C /* DataTableViewCell.m in Sources */,
 				043B87CB1972A58800730C0B /* PredictionSummaryTableViewCell.m in Sources */,
+				0431A73519D84252008B8905 /* PredictionService.m in Sources */,
 				046000BC198EC89B0091DE97 /* InitViewController.m in Sources */,
 				04165F3219D26DC5006DDB64 /* ViewHelper.m in Sources */,
 				042CC402195BBF770013FFA5 /* Week.m in Sources */,

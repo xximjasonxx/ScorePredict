@@ -103,9 +103,7 @@
         cell.awayTeam.text = [game.awayTeamAbbr uppercaseString];
         cell.homeTeam.text = [game.homeTeamAbbr uppercaseString];
         
-        if ([game.gameState.lowercaseString isEqualToString:@"ip"]) {
-            cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        }
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
         // check for a prediction
         PredictionRepository *predictionRepo = [[RepositoryFactory getInstance] getPredictionRepository];
@@ -147,30 +145,45 @@
     return [[self.games objectForKey:key] objectAtIndex:rowIndex];
 }
 
--(BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([identifier isEqualToString:@"PredictionView"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        
-        Game *game = [self getGameForSection:indexPath.section andRow:indexPath.row];
-        if (game == nil) {
-            [self showAlertMessage:@"Could not find selected game"];
-            return NO;
+    // get the selected game
+    Game *selectedGame = [self getGameForSection:indexPath.section andRow:indexPath.row];
+    if ([selectedGame isConcluded])
+    {
+        PredictionRepository *predictionRepo = [[RepositoryFactory getInstance] getPredictionRepository];
+        Prediction *prediction = [predictionRepo getPredictionForGame:selectedGame.gameId];
+        if (prediction != nil) {
+            [self performSegueWithIdentifier: @"ConcludedGamePrediction" sender: self];
+        }
+        else {
+            [self performSegueWithIdentifier: @"ConcludedGameNoPrediction" sender: self];
         }
     }
     
-    return YES;
+    if ([selectedGame inPregame])
+    {
+        [self performSegueWithIdentifier: @"Pregame" sender: self];
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"PredictionView"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    if ([[segue identifier] isEqualToString:@"ConcludedGamePrediction"]) {
+        /*NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         PredictionTableViewController *destination = [segue destinationViewController];
         Game *game = [self getGameForSection:indexPath.section andRow:indexPath.row];
         destination.selectedGame = game;
-        destination.selectedPrediction = [[[RepositoryFactory getInstance] getPredictionRepository] getPredictionForGame:game.gameId];
+        destination.selectedPrediction = [[[RepositoryFactory getInstance] getPredictionRepository] getPredictionForGame:game.gameId];*/
+    }
+
+    if ([[segue identifier] isEqualToString:@"ConcludedGameNoPrediction"]) {
+        
+    }
+    
+    if ([[segue identifier] isEqualToString:@"Pregame"]) {
+        
     }
 }
 
