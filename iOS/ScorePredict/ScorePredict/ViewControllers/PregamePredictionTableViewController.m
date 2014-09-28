@@ -32,6 +32,7 @@ PredictionService *predictionService;
     }
     
     [awayScore becomeFirstResponder];
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
 }
 
 - (IBAction)save:(id)sender {

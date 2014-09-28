@@ -30,6 +30,8 @@
     
     // third section
     pointsAwarded.text = [NSString stringWithFormat:@"%d", prediction.pointsAwarded];
+    
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
 }
 
 @end

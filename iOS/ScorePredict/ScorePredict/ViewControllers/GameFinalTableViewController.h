@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+#import "Game.h"
+
 @interface GameFinalTableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UILabel *awayTeam;
+@property (weak, nonatomic) IBOutlet UILabel *awayScore;
+@property (weak, nonatomic) IBOutlet UILabel *homeTeam;
+@property (weak, nonatomic) IBOutlet UILabel *homeScore;
+
+@property (strong, nonatomic) Game *game;
 
 @end
