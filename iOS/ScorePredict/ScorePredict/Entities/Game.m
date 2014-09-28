@@ -33,7 +33,24 @@
 {
     NSString *first = [[self getGameState] substringToIndex:1];
     return [first.lowercaseString isEqualToString:@"p"];
+}
 
+-(NSString *)getHomeCity
+{
+    return [self getCityFrom:homeTeam];
+}
+
+-(NSString *)getAwayCity
+{
+    return [self getCityFrom:awayTeam];
+}
+
+-(NSString *)getCityFrom:(NSString *)teamName
+{
+    NSArray *teamParts = [teamName componentsSeparatedByString:@" "];
+    NSRange range = NSMakeRange(0, teamParts.count - 1);
+    
+    return [[teamParts subarrayWithRange:range] componentsJoinedByString:@" "];
 }
 
 @end

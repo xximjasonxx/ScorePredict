@@ -23,5 +23,7 @@
 - (NSString *) getGameState;
 - (BOOL) isConcluded;
 - (BOOL) inPregame;
+- (NSString *) getHomeCity;
+- (NSString *) getAwayCity;
 
 @end
