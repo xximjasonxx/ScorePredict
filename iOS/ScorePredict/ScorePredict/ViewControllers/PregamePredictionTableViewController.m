@@ -19,7 +19,7 @@ PredictionService *predictionService;
 {
     [super viewDidLoad];
     
-    /*predictionService = [[PredictionService alloc] init];
+    predictionService = [[PredictionService alloc] init];
     
     // set the game information
     awayLabel.text = [game getAwayCity];
@@ -29,10 +29,32 @@ PredictionService *predictionService;
     {
         awayScore.text = [NSString stringWithFormat:@"%d", prediction.predictedAwayScore];
         homeScore.text = [NSString stringWithFormat:@"%d", prediction.predictedHomeScore];
-    }*/
+    }
+    
+    [awayScore becomeFirstResponder];
 }
 
 - (IBAction)save:(id)sender {
+    // validate that non empty numeric entries were provided
+    if ([awayScore.text isEqualToString:@""] || [homeScore.text isEqualToString:@""])
+    {
+        [self showErrorAlert:@"Please provide both an Away and Home score"];
+        return;
+    }
+    
+    int value = [awayScore.text intValue];
+    return;
+}
+
+-(void)showErrorAlert:(NSString *)message
+{
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                        message:message
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+    
+    [alertView show];
 }
 
 @end

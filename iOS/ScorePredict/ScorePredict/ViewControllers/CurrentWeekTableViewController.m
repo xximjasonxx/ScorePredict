@@ -7,7 +7,7 @@
 //
 
 #import "CurrentWeekTableViewController.h"
-#import "PredictionTableViewController.h"
+#import "PregamePredictionTableViewController.h"
 #import "SWRevealViewController.h"
 
 #import "HomeViewTableViewCell.h"
@@ -41,7 +41,7 @@
     
     CurrentWeekService *service = [[CurrentWeekService alloc] initWithDelegate:self];
     
-    [ViewHelper showWaitingView:self.view];
+    [ViewHelper showWaitingView:self.navigationController.view];
     [service loadCurrentWeekFor:userId withToken:token];
 }
 
@@ -76,6 +76,8 @@
     return self.games.count;
 }
 
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSString *key = [[self.games allKeys] objectAtIndex:section];
@@ -103,7 +105,9 @@
         cell.awayTeam.text = [game.awayTeamAbbr uppercaseString];
         cell.homeTeam.text = [game.homeTeamAbbr uppercaseString];
         
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        if ([game.gameState.lowercaseString isEqualToString:@"ip"]) {
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        }
         
         // check for a prediction
         PredictionRepository *predictionRepo = [[RepositoryFactory getInstance] getPredictionRepository];
@@ -145,7 +149,7 @@
     return [[self.games objectForKey:key] objectAtIndex:rowIndex];
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // get the selected game
     Game *selectedGame = [self getGameForSection:indexPath.section andRow:indexPath.row];
@@ -183,7 +187,13 @@
     }
     
     if ([[segue identifier] isEqualToString:@"Pregame"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        PregamePredictionTableViewController *destination = [segue destinationViewController];
+        Game *game = [self getGameForSection:indexPath.section andRow:indexPath.row];
+        Prediction *prediction = [[[RepositoryFactory getInstance] getPredictionRepository] getPredictionForGame:game.gameId];
         
+        destination.game = game;
+        destination.prediction = prediction;
     }
 }
 
