@@ -7,11 +7,9 @@
 //
 
 #import "PredictionTableViewController.h"
-#import "ImageTableData.h"
 #import "TableData.h"
 
 #import "DataTableViewCell.h"
-#import "ImageDataTableViewCell.h"
 #import "TextEntryTableViewCell.h"
 
 @implementation PredictionTableViewController
@@ -42,18 +40,6 @@ NSMutableDictionary *dataArray;
 {
     NSMutableArray *topSection = [[NSMutableArray alloc] init];
     
-    [topSection addObject:[[ImageTableData alloc] initWithTableCell:@"ImageDataCell"
-                                                          withLabel:selectedGame.awayTeamAbbr
-                                                          withValue:[NSString stringWithFormat:@"%d", selectedGame.awayTeamScore]
-                                                           andImage:[UIImage imageNamed:selectedGame.awayTeamAbbr]]];
-    
-    [topSection addObject:[[ImageTableData alloc] initWithTableCell:@"ImageDataCell"
-                                                          withLabel:selectedGame.homeTeamAbbr
-                                                          withValue:[NSString stringWithFormat:@"%d", selectedGame.homeTeamScore]
-                                                           andImage:[UIImage imageNamed:selectedGame.homeTeamAbbr]]];
-    [dataArray setObject:topSection forKey:@"Top"];
-    
-    NSMutableArray *bottomSection = [[NSMutableArray alloc] init];
     NSString *predictedAwayScore = @"";
     NSString *predictedHomeScore = @"";
     
@@ -62,48 +48,41 @@ NSMutableDictionary *dataArray;
         predictedHomeScore = [NSString stringWithFormat:@"%d", selectedPrediction.predictedHomeScore];
     }
     
-    [bottomSection addObject:[[TableData alloc] initWithTableCell:@"TextEntryCell"
-                                                        withLabel:selectedGame.awayTeamAbbr
+    [topSection addObject:[[TableData alloc] initWithTableCell:@"TextEntryCell"
+                                                        withLabel:[selectedGame getAwayCity]
                                                          withVaue:predictedAwayScore]];
     
-    [bottomSection addObject:[[TableData alloc] initWithTableCell:@"TextEntryCell"
-                                                        withLabel:selectedGame.homeTeamAbbr
+    [topSection addObject:[[TableData alloc] initWithTableCell:@"TextEntryCell"
+                                                        withLabel:[selectedGame getHomeCity]
                                                          withVaue:predictedHomeScore]];
     
-    [dataArray setObject:bottomSection forKey:@"Bottom"];
+    [dataArray setObject:topSection forKey:@"Top"];
 }
 
 -(void)buildFinalList
 {
     NSMutableArray *topSection = [[NSMutableArray alloc] init];
     
-    [topSection addObject:[[ImageTableData alloc] initWithTableCell:@"ImageDataCell"
-                                                         withLabel:selectedGame.awayTeamAbbr
-                                                         withValue:[NSString stringWithFormat:@"%d", selectedGame.awayTeamScore]
-                                                          andImage:[UIImage imageNamed:selectedGame.awayTeamAbbr]]];
+    [topSection addObject:[[TableData alloc] initWithTableCell:@"TeamDataCell"
+                                                     withLabel:[selectedGame getAwayCity]
+                                                      withVaue:[NSString stringWithFormat:@"%d", selectedGame.awayTeamScore]]];
     
-    [topSection addObject:[[ImageTableData alloc] initWithTableCell:@"ImageDataCell"
-                                                         withLabel:selectedGame.homeTeamAbbr
-                                                         withValue:[NSString stringWithFormat:@"%d", selectedGame.homeTeamScore]
-                                                          andImage:[UIImage imageNamed:selectedGame.homeTeamAbbr]]];
+    [topSection addObject:[[TableData alloc] initWithTableCell:@"TeamDataCell"
+                                                     withLabel:[selectedGame getHomeCity]
+                                                      withVaue:[NSString stringWithFormat:@"%d", selectedGame.homeTeamScore]]];
+
     
     [dataArray setObject:topSection forKey:@"Top"];
     
     NSMutableArray *bottomSection = [[NSMutableArray alloc] init];
     if (selectedPrediction != nil) {
-        [bottomSection addObject:[[ImageTableData alloc] initWithTableCell:@"ImageDataCell"
-                                                                 withLabel:selectedGame.awayTeamAbbr
-                                                                 withValue:[NSString stringWithFormat:@"%d", selectedPrediction.predictedAwayScore]
-                                                                  andImage:[UIImage imageNamed:selectedGame.awayTeamAbbr]]];
-        
-        [bottomSection addObject:[[ImageTableData alloc] initWithTableCell:@"ImageDataCell"
-                                                                 withLabel:selectedGame.awayTeamAbbr
-                                                                 withValue:[NSString stringWithFormat:@"%d", selectedPrediction.predictedHomeScore]
-                                                                  andImage:[UIImage imageNamed:selectedGame.homeTeamAbbr]]];
+        [bottomSection addObject:[[TableData alloc] initWithTableCell:@"DataCell"
+                                                            withLabel:[selectedGame getAwayCity]
+                                                             withVaue:[NSString stringWithFormat:@"%d", selectedPrediction.predictedAwayScore]]];
         
         [bottomSection addObject:[[TableData alloc] initWithTableCell:@"DataCell"
-                                                            withLabel:@"Points Awarded"
-                                                             withVaue:[NSString stringWithFormat:@"%d", selectedPrediction.pointsAwarded]]];
+                                                            withLabel:[selectedGame getHomeCity]
+                                                             withVaue:[NSString stringWithFormat:@"%d", selectedPrediction.predictedHomeScore]]];
     }
     else {
         [bottomSection addObject:[[TableData alloc] initWithTableCell:@"DataCell"
@@ -116,7 +95,10 @@ NSMutableDictionary *dataArray;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    if ([selectedGame isConcluded])
+        return 2;
+    
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -130,7 +112,7 @@ NSMutableDictionary *dataArray;
 
 -(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == 0) {
+    if (section == 0 && [selectedGame isConcluded]) {
         return @"Game";
     }
     else {
@@ -144,9 +126,8 @@ NSMutableDictionary *dataArray;
     NSString *key = [keys objectAtIndex:indexPath.section];
     TableData *tableData = [[dataArray objectForKey:key] objectAtIndex:indexPath.row];
     
-    if ([tableData.tableCell isEqual: @"ImageDataCell"]) {
-        ImageDataTableViewCell *theCell = (ImageDataTableViewCell *)[tableView dequeueReusableCellWithIdentifier:tableData.tableCell];
-        [theCell.imageView setImage:((ImageTableData *)tableData).image];
+    if ([tableData.tableCell isEqual: @"TeamDataCell"]) {
+        DataTableViewCell *theCell = (DataTableViewCell *)[tableView dequeueReusableCellWithIdentifier:tableData.tableCell];
         [theCell.label setText:tableData.label];
         
         if (tableData.value.length > 0) {
