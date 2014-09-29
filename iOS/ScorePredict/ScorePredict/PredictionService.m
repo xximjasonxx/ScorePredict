@@ -36,8 +36,10 @@ PredictionRepository *predictionRepository;
                     withAwayScore:awayValue
                      andHomeScore:homeValue
                        onComplete:^(NSDictionary *data) {
-                           Prediction *newPrediction = [self makePredictionFromDictionary:data];
+                           Prediction *newPrediction = [[Prediction alloc] initWithDictionary:data];
                            [predictionRepository addPrediction:newPrediction withWeek:weekNo withYear:yearNo];
+                           
+                           completeHandler();
                        } onError:^(NSString *errorMessage) {
                            errorHandler(errorMessage);
                        }];
@@ -48,7 +50,10 @@ PredictionRepository *predictionRepository;
                     withAwayScore:awayValue andHomeScore:homeValue
                            withId:thePrediction.predictionId
                        onComplete:^(NSDictionary *item) {
-                           completeHandler(item);
+                           Prediction *existingPrediction = [[Prediction alloc] initWithDictionary:item];
+                           [predictionRepository updatePrediction:existingPrediction withWeek:weekNo withYear:yearNo];
+                           
+                           completeHandler();
                        } onError:^(NSString *errorMessage) {
                            errorHandler(errorMessage);
                        }];
@@ -98,12 +103,6 @@ PredictionRepository *predictionRepository;
         }
     }];
 
-}
-
-// helper methods
--(Prediction *)makePredictionFromDictionary:(NSDictionary *)data
-{
-    return nil;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "PregamePredictionTableViewController.h"
 #import "PredictionService.h"
+#import "ViewHelper.h"
 
 @implementation PregamePredictionTableViewController
 @synthesize awayLabel, awayScore, homeLabel, homeScore;
@@ -43,8 +44,21 @@ PredictionService *predictionService;
         return;
     }
     
-    int value = [awayScore.text intValue];
-    return;
+    int predictedAwayScore = [self.awayScore.text intValue];
+    int predictedHomeScore = [self.homeScore.text intValue];
+    
+    [ViewHelper showWaitingView:self.navigationController.view];
+    [predictionService savePredictionFor:game.gameId
+                           withAwayScore:predictedAwayScore
+                            andHomeScore:predictedHomeScore
+                                  inWeek:game.weekNo
+                               andInYear:game.year
+                              onComplete:^{
+                                  [self performSegueWithIdentifier:@"madePrediction" sender:self];
+                              } onError:^(NSString *message) {
+                                  [ViewHelper hideWaitingView];
+                                  [self showErrorAlert:message];
+                              }];
 }
 
 -(void)showErrorAlert:(NSString *)message
@@ -56,6 +70,11 @@ PredictionService *predictionService;
                                               otherButtonTitles:nil];
     
     [alertView show];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    return;
 }
 
 @end

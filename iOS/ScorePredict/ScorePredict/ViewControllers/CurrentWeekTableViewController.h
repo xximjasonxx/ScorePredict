@@ -14,4 +14,6 @@
 @property (nonatomic, strong) NSMutableDictionary *games;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuItem;
 
+- (IBAction)madePerdiction:(UIStoryboardSegue *)storyboard;
+
 @end

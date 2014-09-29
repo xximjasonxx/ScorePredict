@@ -384,11 +384,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="vrA-wO-Ejk">
-                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="5uS-VW-rZP">
-                            <connections>
-                                <segue destination="6KY-0d-b77" kind="unwind" unwindAction="unwindToMenuViewController:" id="EJl-tz-Rb4"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" image="menu.png" id="5uS-VW-rZP"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuItem" destination="5uS-VW-rZP" id="P4X-hS-e4n"/>
@@ -398,7 +394,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ert-hs-c7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="6KY-0d-b77" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="950" y="757"/>
         </scene>
@@ -572,11 +567,13 @@
                         <outlet property="awayScore" destination="UNQ-o0-uCW" id="D7A-hX-fka"/>
                         <outlet property="homeLabel" destination="tWW-XN-xQp" id="m8U-Lv-u3Z"/>
                         <outlet property="homeScore" destination="ig1-gf-S8v" id="wgI-qs-Qat"/>
+                        <segue destination="jIo-ea-XOs" kind="unwind" identifier="madePrediction" unwindAction="madePerdiction:" id="VOc-ZE-OER"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZFy-Y1-alO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jIo-ea-XOs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1586" y="84"/>
+            <point key="canvasLocation" x="1560" y="645"/>
         </scene>
         <!--Game Prediction Final Table View Controller-->
         <scene sceneID="42T-2n-m2W">
