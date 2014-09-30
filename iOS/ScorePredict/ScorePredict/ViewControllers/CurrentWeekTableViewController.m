@@ -109,6 +109,7 @@
         
         if ([game.gameState.lowercaseString isEqualToString:@"ip"]) {
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
+            cell.accessoryType = UITableViewCellAccessoryNone;
         }
         
         // check for a prediction
@@ -198,7 +199,6 @@
 
 -(IBAction)madePerdiction:(UIStoryboardSegue *)storyboard
 {
-    return;
 }
 
 @end
