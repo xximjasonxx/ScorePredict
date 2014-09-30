@@ -61,7 +61,6 @@
 		0431A73519D84252008B8905 /* PredictionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0431A73419D84252008B8905 /* PredictionService.m */; };
 		043B87CB1972A58800730C0B /* PredictionSummaryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */; };
 		044CD8DF197CAB300045F926 /* MenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044CD8DE197CAB300045F926 /* MenuTableViewController.m */; };
-		044E571C1964E44C00F0BB63 /* AboutNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E571B1964E44C00F0BB63 /* AboutNavigationController.m */; };
 		0453246C196B729900328F09 /* HistoryWeekTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0453246B196B729900328F09 /* HistoryWeekTableViewController.m */; };
 		04586B571960F40700BC4140 /* TextEntryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04586B561960F40700BC4140 /* TextEntryTableViewCell.m */; };
 		046000B5198EC6350091DE97 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 046000B4198EC6350091DE97 /* SWRevealViewController.m */; };
@@ -178,8 +177,6 @@
 		043B87CA1972A58800730C0B /* PredictionSummaryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PredictionSummaryTableViewCell.m; sourceTree = "<group>"; };
 		044CD8DD197CAB300045F926 /* MenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuTableViewController.h; path = ViewControllers/MenuTableViewController.h; sourceTree = "<group>"; };
 		044CD8DE197CAB300045F926 /* MenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuTableViewController.m; path = ViewControllers/MenuTableViewController.m; sourceTree = "<group>"; };
-		044E571A1964E44C00F0BB63 /* AboutNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AboutNavigationController.h; path = ViewControllers/AboutNavigationController.h; sourceTree = "<group>"; };
-		044E571B1964E44C00F0BB63 /* AboutNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AboutNavigationController.m; path = ViewControllers/AboutNavigationController.m; sourceTree = "<group>"; };
 		0453246A196B729900328F09 /* HistoryWeekTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HistoryWeekTableViewController.h; path = ViewControllers/HistoryWeekTableViewController.h; sourceTree = "<group>"; };
 		0453246B196B729900328F09 /* HistoryWeekTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HistoryWeekTableViewController.m; path = ViewControllers/HistoryWeekTableViewController.m; sourceTree = "<group>"; };
 		04586B551960F40700BC4140 /* TextEntryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextEntryTableViewCell.h; sourceTree = "<group>"; };
@@ -333,8 +330,6 @@
 		042CC3BA195914200013FFA5 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				044E571A1964E44C00F0BB63 /* AboutNavigationController.h */,
-				044E571B1964E44C00F0BB63 /* AboutNavigationController.m */,
 				042CC3DB195A664D0013FFA5 /* AboutViewController.h */,
 				042CC3DC195A664D0013FFA5 /* AboutViewController.m */,
 				041D4D9919D64F8D009B59DB /* Base */,
@@ -636,7 +631,6 @@
 				042CC3F7195BBE300013FFA5 /* CurrentWeekService.m in Sources */,
 				041D4D9C19D64FB6009B59DB /* ScorePredictViewControllerBaseViewController.m in Sources */,
 				042CC3C41959176E0013FFA5 /* RootViewController.m in Sources */,
-				044E571C1964E44C00F0BB63 /* AboutNavigationController.m in Sources */,
 				042CC3D7195A64AF0013FFA5 /* CurrentWeekNavigationControllerViewController.m in Sources */,
 				042CC401195BBF770013FFA5 /* Prediction.m in Sources */,
 				042CC40F195BBFD90013FFA5 /* WeekRepository.m in Sources */,
