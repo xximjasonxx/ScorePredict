@@ -1126,7 +1126,7 @@
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="size" keyPath="contentSize">
-                                        <size key="value" width="320" height="700"/>
+                                        <size key="value" width="320" height="750"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="rect" keyPath="frame">
                                         <rect key="value" x="0.0" y="64" width="320" height="418"/>
@@ -1154,7 +1154,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i0p-fH-bFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tci-d6-x27" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-121" y="1468"/>
+            <point key="canvasLocation" x="183" y="2628"/>
         </scene>
     </scenes>
     <resources>
