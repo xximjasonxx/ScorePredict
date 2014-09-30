@@ -42,6 +42,9 @@ PredictionHistoryService *historyService;
 {
     [ViewHelper hideWaitingView];
     predictionHistory = historyArray;
+    if (predictionHistory.count == 0)
+        self.title = @"No History";
+    
     [self.tableView reloadData];
 }
 
