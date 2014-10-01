@@ -22,7 +22,7 @@
 
 -(Week *)getCurrentWeek {
     if (self.weekArray.count == 0) {
-        // raise an error
+        return nil;
     }
 
     if (self.weekArray.count == 1) {

@@ -27,12 +27,23 @@
 }
 
 - (void)loadCurrentWeekFor:(NSString *)userId withToken:(NSString *)token {
-    NSDate *currentDate = [NSDate date];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"MM/dd/yyyy"];
-    
+    Week *currentWeek = [[[RepositoryFactory getInstance] getWeekRepository] getCurrentWeek];
+    if (currentWeek != nil) {
+        [self.delegate currentWeekLoaded];
+    }
+    else {
+        NSDate *currentDate = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"MM/dd/yyyy"];
+        
+        [self loadCurrentWeekFromRemoteFor:userId withToken:token andDate:[formatter stringFromDate:currentDate]];
+    }
+}
+
+-(void) loadCurrentWeekFromRemoteFor:(NSString *)userId withToken:(NSString *)token andDate:(NSString *)date
+{
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-    [parameters setValue:[formatter stringFromDate:currentDate] forKey:@"weekForDate"];
+    [parameters setValue:date forKey:@"weekForDate"];
     //[parameters setValue:@"11/1/2013" forKey:@"weekForDate"];
     
     MSClient *client = [ClientFactory getClient];
