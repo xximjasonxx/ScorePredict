@@ -10,12 +10,7 @@
 #import "SWRevealViewController.h"
 
 @implementation AboutViewController
-@synthesize scrollView, menuButton;
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [scrollView setContentInset:UIEdgeInsetsZero];
-}
+@synthesize menuButton;
 
 -(void)viewDidLoad
 {

@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AboutViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuButton;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+
 
 @end

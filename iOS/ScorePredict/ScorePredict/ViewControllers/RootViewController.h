@@ -17,4 +17,6 @@
 @interface RootViewController : UIViewController
 @property (nonatomic, weak) id <LoginViewProtocol> delegate;
 
+-(IBAction)returnToMain:(UIStoryboardSegue *)segue;
+
 @end

@@ -67,6 +67,8 @@
 
 -(void)loadFailed
 {
+    [ViewHelper hideWaitingView];
+    self.title = @"No Games";
     [self showAlertMessage:@"Failed to load data for the current week. Please refresh"];
 }
 
@@ -140,7 +142,7 @@
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error Occured"
                                                         message:message
                                                        delegate:nil
-                                              cancelButtonTitle:@"Ok:"
+                                              cancelButtonTitle:@"Ok"
                                               otherButtonTitles:nil];
     
     [alertView show];
