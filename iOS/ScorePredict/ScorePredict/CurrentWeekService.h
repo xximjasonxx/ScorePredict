@@ -15,5 +15,6 @@
 
 - (id) initWithDelegate:(id<CurrentWeekProtocol>)delegate;
 - (void)loadCurrentWeekFor:(NSString *)user withToken:(NSString *)token;
+- (void)loadCurrentWeekFromRemoteFor:(NSString *)userId withToken:(NSString *)token;
 
 @end

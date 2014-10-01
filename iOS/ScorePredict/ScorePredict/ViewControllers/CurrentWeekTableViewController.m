@@ -21,6 +21,8 @@
 @implementation CurrentWeekTableViewController
 @synthesize games, menuItem;
 
+CurrentWeekService *currentWeekService;
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,6 +35,14 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    
+    // give the navigation bar a refresh button
+    UIBarButtonItem *refreshButton = [[UIBarButtonItem alloc] initWithTitle:@"Refresh"
+                                                                      style:UIBarButtonItemStylePlain
+                                                                     target:self
+                                                                     action:@selector(refreshCurrentWeek)];
+    
+    self.navigationItem.rightBarButtonItem = refreshButton;
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -41,10 +51,20 @@
     NSString *userId = [defaults objectForKey:@"UserId"];
     NSString *token = [defaults objectForKey:@"Token"];
     
-    CurrentWeekService *service = [[CurrentWeekService alloc] initWithDelegate:self];
+    currentWeekService = [[CurrentWeekService alloc] initWithDelegate:self];
     
     [ViewHelper showWaitingView:self.navigationController.view];
-    [service loadCurrentWeekFor:userId withToken:token];
+    [currentWeekService loadCurrentWeekFor:userId withToken:token];
+}
+
+-(void)refreshCurrentWeek
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *userId = [defaults objectForKey:@"UserId"];
+    NSString *token = [defaults objectForKey:@"Token"];
+    
+    [ViewHelper showWaitingView:self.navigationController.view];
+    [currentWeekService loadCurrentWeekFromRemoteFor:userId withToken:token];
 }
 
 -(void)currentWeekLoaded
