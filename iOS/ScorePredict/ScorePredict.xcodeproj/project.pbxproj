@@ -535,6 +535,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Farrellsoft;
 				TargetAttributes = {
+					042CC381195912DA0013FFA5 = {
+						DevelopmentTeam = 7XN4GH4DP5;
+					};
 					042CC3A2195912DA0013FFA5 = {
 						TestTargetID = 042CC381195912DA0013FFA5;
 					};
@@ -770,7 +773,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jason Farrell (3EG6KX5J4Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScorePredict",
@@ -780,7 +784,7 @@
 				INFOPLIST_FILE = "ScorePredict/ScorePredict-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1B28D9D5-F0FA-4292-9E60-EF834D230651";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -790,7 +794,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jason Farrell (3EG6KX5J4Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ScorePredict",
@@ -800,7 +805,7 @@
 				INFOPLIST_FILE = "ScorePredict/ScorePredict-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "1EC1AE0C-0588-470F-B1B9-182B33D67003";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

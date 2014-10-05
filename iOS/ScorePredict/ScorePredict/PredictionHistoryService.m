@@ -75,7 +75,7 @@
                        gamePrediction.awayScore = [[prediction objectForKey:@"awayScore"] integerValue];
                        gamePrediction.homeScore = [[prediction objectForKey:@"homeScore"] integerValue];
                        gamePrediction.predictedAwayScore = [[prediction objectForKey:@"predictedAwayScore"] integerValue];
-                       gamePrediction.predictedHomeScore = [[prediction objectForKey:@"preductedHomeScore"] integerValue];
+                       gamePrediction.predictedHomeScore = [[prediction objectForKey:@"predictedHomeScore"] integerValue];
                        gamePrediction.predictionPoints = [[prediction objectForKey:@"pointsAwarded"] integerValue];
                        
                        // dont need gamestate
